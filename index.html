@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUANTUM LOT | Next-Gen MT5 Position Sizing Terminal</title>
+    <meta name="description" content="Institutional-grade MT5 lot calculator & position sizing platform for traders and prop firms.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #05070a;
+            --bg-card: rgba(13, 17, 26, 0.85);
+            --bg-card-hover: rgba(20, 26, 40, 0.95);
+            --bg-input: #0a0e17;
+            
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(59, 130, 246, 0.4);
+            
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-sub: #64748b;
+            
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --emerald: #10b981;
+            --amber: #f59e0b;
+            --rose: #f43f5e;
+            
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        /* Core Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            background-position: center center;
+        }
+
+        .tabular-nums {
+            font-family: 'JetBrains Mono', monospace;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Motion Canvas Background */
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ----------------------------------------------------
+           NAVIGATION BAR
+        ---------------------------------------------------- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: rgba(5, 7, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-mark {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-main);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-ghost {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-primary {
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 9px 20px;
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+            background: #f1f5f9;
+        }
+
+        /* ----------------------------------------------------
+           HERO SECTION
+        ---------------------------------------------------- */
+        .hero {
+            padding: 140px 0 80px 0;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 9999px;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 40%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 520px;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 11px 24px;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hero Preview Screen Mockup */
+        .hero-screen-mock {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            position: relative;
+            animation: floatMock 6s ease-in-out infinite;
+        }
+
+        @keyframes floatMock {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .mock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 16px;
+        }
+
+        .mock-dots { display: flex; gap: 6px; }
+        .mock-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+
+        /* Logo Wall Marquee */
+        .logo-wall {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .logo-item {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.03em;
+            color: var(--text-muted);
+        }
+
+        /* ----------------------------------------------------
+           SECTION 2: BENTO GRID FEATURES & CALCULATOR APP
+        ---------------------------------------------------- */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 580px;
+            margin-bottom: 48px;
+        }
+
+        /* Bento Grid Architecture */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Calculator Controls Inside Card */
+        .calc-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-family: 'JetBrains Mono', monospace;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        select:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        .chip-row {
+            display: flex;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .chip-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .chip-btn:hover {
+            border-color: var(--text-muted);
+            color: var(--text-muted);
+        }
+
+        .chip-btn.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        /* Result Lot Display */
+        .result-box {
+            background: rgba(5, 7, 10, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .result-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-sub);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .result-lots {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--amber);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .copy-btn {
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: var(--amber);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(245, 158, 11, 0.3);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .metric-mini {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 12px;
+            border-radius: var(--radius-md);
+            text-align: left;
+        }
+
+        .metric-m-title {
+            font-size: 0.72rem;
+            color: var(--text-sub);
+        }
+
+        .metric-m-value {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        /* ----------------------------------------------------
+           NEW DYNAMIC FEATURE SHOWCASE (MOTION GRAPHICS)
+        ---------------------------------------------------- */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .showcase-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+        }
+
+        .showcase-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        }
+
+        .showcase-card.full {
+            grid-column: span 2;
+        }
+
+        .showcase-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--primary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .showcase-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .showcase-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        /* Animated Interactive UI Screenshot Mockups */
+        .ui-mock-screen {
+            background: rgba(5, 7, 10, 0.9);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animated Radar / Live Chart Visualizer Canvas */
+        #radarCanvas {
+            width: 100%;
+            height: 160px;
+            border-radius: var(--radius-md);
+        }
+
+        /* Dynamic Trade Order Execution Mockup */
+        .trade-exec-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            margin-top: 10px;
+        }
+
+        .exec-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .exec-btn.buy { background: var(--emerald); color: #000; }
+        .exec-btn.sell { background: var(--rose); color: #fff; }
+        .exec-btn:hover { transform: scale(1.05); }
+
+        /* ----------------------------------------------------
+           SECTION 3: STATS & PROVEN RESULTS
+        ---------------------------------------------------- */
+        .stats-banner {
+            background: linear-gradient(180deg, rgba(13, 17, 26, 0.6) 0%, rgba(5, 7, 10, 0.9) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .stats-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ----------------------------------------------------
+           SECTION 4: FAQ ACCORDION
+        ---------------------------------------------------- */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-q {
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-a {
+            display: block;
+        }
+
+        /* ----------------------------------------------------
+           FOOTER
+        ---------------------------------------------------- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 80px 0 40px 0;
+            background: #030406;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 360px;
+        }
+
+        .footer-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+
+        .footer-links-col {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links-col a:hover {
+            color: var(--text-main);
+        }
+
+        .footer-watermark {
+            font-size: 15vw;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            text-align: center;
+            line-height: 0.8;
+            color: rgba(255, 255, 255, 0.03);
+            user-select: none;
+            margin: 40px 0 20px 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* Toast Popup */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--emerald);
+            color: #000;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 960px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-desc { margin: 0 auto 36px auto; }
+            .hero-actions { justify-content: center; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .showcase-grid { grid-template-columns: 1fr; }
+            .showcase-card.full { grid-column: span 1; }
+            .stats-banner { grid-template-columns: 1fr; gap: 24px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero-title { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div id="toast" class="toast">MT5 Lot Size Copied!</div>
+
+<!-- Navigation Bar -->
+<header class="navbar">
+    <div class="container nav-inner">
+        <a href="#" class="logo">
+            <div class="logo-mark">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+            </div>
+            QUANTUM
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#calculator" class="nav-link">Calculator</a></li>
+                <li><a href="#showcase" class="nav-link">Motion Showcase</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <a href="#calculator" class="btn-ghost">Sign in</a>
+            <a href="#calculator" class="btn-primary">
+                Launch App
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero container">
+    <div>
+        <div class="hero-badge">
+            <span>✨</span> Next-Gen MT5 Position Sizing
+        </div>
+        <h1 class="hero-title">Precision Lot Sizing. Zero Margin Calls.</h1>
+        <p class="hero-desc">
+            Institutional-grade position sizing and risk management platform for MetaTrader 5 traders, prop firms, and portfolio managers.
+        </p>
+        <div class="hero-actions">
+            <a href="#calculator" class="btn-primary" style="padding: 12px 28px; font-size: 0.95rem;">
+                Calculate Lots &rarr;
+            </a>
+            <a href="#showcase" class="btn-secondary">Explore Motion Graphics</a>
+        </div>
+    </div>
+
+    <!-- Hero Screen Mockup -->
+    <div class="hero-screen-mock">
+        <div class="mock-header">
+            <div class="mock-dots">
+                <div class="mock-dot"></div>
+                <div class="mock-dot"></div>
+                <div class="mock-dot"></div>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--emerald); font-family: 'JetBrains Mono', monospace; font-weight: 700;">● MT5 LIVE CONNECT</span>
+        </div>
+        
+        <div style="text-align: center; margin: 16px 0;">
+            <div style="font-size: 0.72rem; color: var(--text-sub); text-transform: uppercase; font-weight: 700;">Calculated MT5 Volume</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 3.2rem; font-weight: 800; color: var(--amber); line-height: 1; margin: 4px 0;">0.33 Lots</div>
+            <div style="font-size: 0.8rem; color: var(--emerald); font-weight: 600;">Max Risk Allocation: $100.00 (1.0%)</div>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-mini">
+                <div class="metric-m-title">Cash Risk</div>
+                <div class="metric-m-value tabular-nums" style="color: var(--rose);">$100.00</div>
+            </div>
+            <div class="metric-mini">
+                <div class="metric-m-title">Pip Value</div>
+                <div class="metric-m-value tabular-nums" style="color: var(--emerald);">$3.33</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Logo Wall Marquee -->
+<div class="container">
+    <div class="logo-wall">
+        <span class="logo-item">Framer</span>
+        <span class="logo-item">Apple</span>
+        <span class="logo-item">Adobe</span>
+        <span class="logo-item">LinkedIn</span>
+        <span class="logo-item">Microsoft</span>
+        <span class="logo-item">Vercel</span>
+    </div>
+</div>
+
+<!-- SECTION 2: BENTO GRID FEATURES & CALCULATOR APP -->
+<section id="features" class="section-padding container">
+    <div class="section-tag">📊 Sizing Engine</div>
+    <h2 class="section-title">Position Sizing Tool That Delivers Real Results</h2>
+    <p class="section-desc">
+        Our proven algorithms help you size trades with surgical precision across Forex, Gold, Commodities, and Crypto.
+    </p>
+
+    <div class="bento-grid">
+        <!-- Main Interactive Calculator Widget Card -->
+        <div class="bento-card" id="calculator">
+            <div class="calc-title">
+                <span>Interactive MT5 Sizing Terminal</span>
+                <span style="font-size: 0.75rem; color: var(--emerald); font-family: 'JetBrains Mono', monospace;">● Live Sync</span>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">
+                    <label for="assetType">Instrument Category</label>
+                    <span id="contractHint" style="font-size: 0.75rem; color: var(--text-sub);">1 Lot = 100,000 Units</span>
+                </div>
+                <select id="assetType" onchange="calculateLots()">
+                    <option value="forex">Forex Standard (EURUSD, GBPUSD)</option>
+                    <option value="jpy">Forex Yen Pairs (USDJPY, EURJPY)</option>
+                    <option value="gold">Gold & Commodities (XAUUSD - 100 oz)</option>
+                    <option value="crypto">Crypto & Indices (BTCUSD, US30)</option>
+                </select>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <div class="form-label">
+                        <label for="balance">Account Balance ($)</label>
+                    </div>
+                    <input type="number" id="balance" value="10000" step="500" min="1" oninput="calculateLots()">
+                    <div class="chip-row">
+                        <button class="chip-btn" onclick="setBalance(1000)">$1k</button>
+                        <button class="chip-btn active" onclick="setBalance(10000)">$10k</button>
+                        <button class="chip-btn" onclick="setBalance(50000)">$50k</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label">
+                        <label for="risk">Risk Percentage (%)</label>
+                    </div>
+                    <input type="number" id="risk" value="1.0" step="0.1" min="0.05" max="100" oninput="calculateLots()">
+                    <div class="chip-row">
+                        <button class="chip-btn" onclick="setRisk(0.5)">0.5%</button>
+                        <button class="chip-btn active" onclick="setRisk(1.0)">1.0%</button>
+                        <button class="chip-btn" onclick="setRisk(2.0)">2.0%</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">
+                    <label for="distance">Stop Loss Distance (Price Delta)</label>
+                    <span id="pipHint" style="color: var(--primary); font-family: 'JetBrains Mono', monospace;">30.0 Pips</span>
+                </div>
+                <input type="number" id="distance" value="0.00300" step="0.00001" oninput="calculateLots()">
+            </div>
+
+            <div class="result-box">
+                <div class="result-label">Recommended MT5 Volume</div>
+                <div class="result-lots tabular-nums" id="finalLots">0.33 Lots</div>
+                <button class="copy-btn" onclick="copyLots()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    Copy Lots to MT5
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side Feature Cards -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div class="bento-card">
+                <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 8px;">Multi-Asset Scaling</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Automatic contract size multipliers for Forex (100k), JPY pairs (1k), Gold (100 oz), and Crypto/Indices (1 unit).
+                </p>
+            </div>
+            <div class="bento-card">
+                <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 8px;">Sub-10ms Latency Engine</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Calculates position sizes instantly as you adjust values or tap quick preset chips.
+                </p>
+            </div>
+            <div class="bento-card">
+                <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 8px;">MetaTrader 5 Direct Export</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Export volume directly into MetaTrader 5 order windows with one click.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: MOTION GRAPHICS & FEATURE SHOWCASE (REPLACED PRICING) -->
+<section id="showcase" class="section-padding container">
+    <div style="text-align: center; margin-bottom: 48px;">
+        <div class="section-tag">🎬 Interactive Motion Showcase</div>
+        <h2 class="section-title">Explore Sizing Capabilities In Motion</h2>
+        <p class="section-desc" style="margin: 0 auto;">Visualizing institutional risk allocation, order execution telemetry, and multi-asset scaling.</p>
+    </div>
+
+    <div class="showcase-grid">
+        <!-- Motion Feature 1: Live Risk Radar Chart -->
+        <div class="showcase-card">
+            <div>
+                <div class="showcase-tag">Feature Motion 01</div>
+                <h3 class="showcase-title">Live Risk Allocation Visualizer</h3>
+                <p class="showcase-desc">Real-time risk allocation radar tracking drawdowns and capital exposure across market conditions.</p>
+            </div>
+            <div class="ui-mock-screen">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-sub); margin-bottom: 8px;">
+                    <span>EQUITY RISK WEIGHT</span>
+                    <span style="color: var(--emerald); font-weight: 700;">1.0% ALLOCATED</span>
+                </div>
+                <canvas id="radarCanvas"></canvas>
+            </div>
+        </div>
+
+        <!-- Motion Feature 2: Native MT5 Execution Mockup -->
+        <div class="showcase-card">
+            <div>
+                <div class="showcase-tag">Feature Motion 02</div>
+                <h3 class="showcase-title">MetaTrader 5 Direct Order Sync</h3>
+                <p class="showcase-desc">Instant lot size insertion into MetaTrader 5 buy & sell order execution dialogs.</p>
+            </div>
+            <div class="ui-mock-screen">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="font-size: 0.8rem; font-weight: 700;">EURUSD · MT5 Exec</span>
+                    <span style="font-size: 0.72rem; color: var(--amber); font-family: 'JetBrains Mono', monospace;">Vol: 0.33 Lots</span>
+                </div>
+                <div class="trade-exec-bar">
+                    <div>
+                        <div style="font-size: 0.7rem; color: var(--text-sub);">Market Price</div>
+                        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; font-weight: 700;">1.08502</div>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="exec-btn sell" onclick="triggerToast('Sell 0.33 Lots Executed')">SELL 0.33</button>
+                        <button class="exec-btn buy" onclick="triggerToast('Buy 0.33 Lots Executed')">BUY 0.33</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Motion Feature 3: Full Width Sub-10ms Telemetry -->
+        <div class="showcase-card full">
+            <div>
+                <div class="showcase-tag">Feature Motion 03</div>
+                <h3 class="showcase-title">Institutional Telemetry & Zero Slip Engine</h3>
+                <p class="showcase-desc">Engineered to process complex Pip-to-Cash formulas under 10ms with high-precision decimal normalization.</p>
+            </div>
+            <div class="ui-mock-screen" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center;">
+                <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: 8px;">
+                    <div style="font-size: 0.72rem; color: var(--text-sub);">Forex Multiplier</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; font-weight: 700; color: var(--primary);">100,000</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: 8px;">
+                    <div style="font-size: 0.72rem; color: var(--text-sub);">Gold Multiplier</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; font-weight: 700; color: var(--amber);">100 oz</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: 8px;">
+                    <div style="font-size: 0.72rem; color: var(--text-sub);">Execution Latency</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; font-weight: 700; color: var(--emerald);">&lt;8 ms</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: PROVEN RESULTS & STATS BANNER -->
+<section class="container section-padding">
+    <div class="stats-banner">
+        <div>
+            <div class="section-tag">🏆 Performance</div>
+            <h2 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px;">Proven Sizing Precision You Can Trust</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">From solo traders to prop firm legends, we've calculated over $4.2M in trading position volume with zero margin calls.</p>
+        </div>
+        <div class="stats-cards">
+            <div class="stat-card">
+                <div class="stat-number">200%</div>
+                <div class="stat-label">Risk Efficiency</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Active Traders</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">&lt;8ms</div>
+                <div class="stat-label">Calculation Speed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Execution Accuracy</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 5: FAQ ACCORDION -->
+<section id="faq" class="section-padding container">
+    <div style="text-align: center; margin-bottom: 48px;">
+        <div class="section-tag">❓ Support</div>
+        <h2 class="section-title">Your Questions Answered</h2>
+    </div>
+
+    <div class="faq-list">
+        <div class="faq-item active" onclick="toggleFaq(this)">
+            <div class="faq-q">
+                <span>How does QUANTUM calculate MT5 Lot Sizes?</span>
+                <span>+</span>
+            </div>
+            <div class="faq-a">
+                QUANTUM calculates position sizing based on your Account Balance, Risk Percentage, and Stop Loss Price Delta. It automatically multiplies by contract sizing rules (e.g. 100,000 for standard Forex, 1,000 for JPY, 100 for Gold, 1 for Crypto).
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+                <span>Can I copy the output directly into MetaTrader 5?</span>
+                <span>+</span>
+            </div>
+            <div class="faq-a">
+                Yes! Clicking "Copy Lots" exports the calculated lot size straight to your clipboard so you can paste it into MT5 order dialogue boxes instantly.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+                <span>Does it support Gold (XAUUSD) and JPY pairs?</span>
+                <span>+</span>
+            </div>
+            <div class="faq-a">
+                Yes, selecting Gold automatically switches to 100 oz contract sizing, and JPY pairs apply normalized 1,000-unit scaling.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="#" class="logo" style="margin-bottom: 16px;">
+                    <div class="logo-mark">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    QUANTUM
+                </a>
+                <p class="footer-brand">
+                    Institutional-grade position sizing engine engineered for MetaTrader 5 traders seeking execution precision and risk discipline.
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-title">Product</div>
+                <ul class="footer-links-col">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#calculator">Calculator</a></li>
+                    <li><a href="#showcase">Motion Showcase</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-title">Resources</div>
+                <ul class="footer-links-col">
+                    <li><a href="#faq">Documentation</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">MT5 Integration</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-title">Legal</div>
+                <ul class="footer-links-col">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Risk Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Oversized Watermark Logo -->
+        <div class="footer-watermark">QUANTUM LOT</div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 QUANTUM LOT TERMINAL. ALL RIGHTS RESERVED.</span>
+            <span>SYSTEM STATUS: OPERATIONAL · METATRADER 5 SYNC</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Interactive Scripts -->
+<script>
+    /* Particle Mesh Background */
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+        constructor() { this.reset(); }
+        reset() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.4;
+            this.vy = (Math.random() - 0.5) * 0.4;
+            this.radius = Math.random() * 2 + 1;
+            this.alpha = Math.random() * 0.4 + 0.1;
+        }
+        update() {
+            this.x += this.vx; this.y += this.vy;
+            if (this.x < 0 || this.x > width) this.vx *= -1;
+            if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(59, 130, 246, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 35; i++) particles.push(new Particle());
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 130) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * (1 - dist / 130)})`;
+                    ctx.lineWidth = 0.8;
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    /* Live Motion Radar Canvas */
+    const rCanvas = document.getElementById('radarCanvas');
+    const rCtx = rCanvas.getContext('2d');
+    let angle = 0;
+
+    function drawRadar() {
+        const w = rCanvas.width = rCanvas.offsetWidth;
+        const h = rCanvas.height = rCanvas.offsetHeight;
+        rCtx.clearRect(0, 0, w, h);
+
+        const cx = w / 2;
+        const cy = h / 2;
+        const radius = Math.min(w, h) / 2 - 10;
+
+        // Draw Circles
+        rCtx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+        rCtx.lineWidth = 1;
+        rCtx.beginPath(); rCtx.arc(cx, cy, radius * 0.3, 0, Math.PI * 2); rCtx.stroke();
+        rCtx.beginPath(); rCtx.arc(cx, cy, radius * 0.65, 0, Math.PI * 2); rCtx.stroke();
+        rCtx.beginPath(); rCtx.arc(cx, cy, radius, 0, Math.PI * 2); rCtx.stroke();
+
+        // Sweep Line
+        angle += 0.03;
+        const x = cx + Math.cos(angle) * radius;
+        const y = cy + Math.sin(angle) * radius;
+
+        rCtx.beginPath();
+        rCtx.moveTo(cx, cy);
+        rCtx.lineTo(x, y);
+        rCtx.strokeStyle = '#10b981';
+        rCtx.lineWidth = 2;
+        rCtx.stroke();
+
+        requestAnimationFrame(drawRadar);
+    }
+    drawRadar();
+
+    /* Calculator Logic */
+    function calculateLots() {
+        const assetType = document.getElementById('assetType').value;
+        const balance = parseFloat(document.getElementById('balance').value) || 0;
+        const riskPercent = parseFloat(document.getElementById('risk').value) || 0;
+        const distance = Math.abs(parseFloat(document.getElementById('distance').value) || 0);
+
+        let contractSize = 100000;
+        let hintText = "1 Lot = 100,000 Units";
+        if (assetType === "gold") { contractSize = 100; hintText = "1 Lot = 100 oz Gold"; }
+        else if (assetType === "crypto") { contractSize = 1; hintText = "1 Lot = 1 Coin/Unit"; }
+        else if (assetType === "jpy") { contractSize = 1000; hintText = "1 Lot = 100,000 JPY"; }
+
+        document.getElementById('contractHint').textContent = hintText;
+
+        if (assetType === 'jpy') document.getElementById('pipHint').textContent = `${(distance * 100).toFixed(1)} Pips`;
+        else if (assetType === 'forex') document.getElementById('pipHint').textContent = `${(distance * 10000).toFixed(1)} Pips`;
+        else document.getElementById('pipHint').textContent = `${distance.toFixed(2)} Points`;
+
+        const cashRisk = balance * (riskPercent / 100);
+        
+        if (distance <= 0 || balance <= 0 || riskPercent <= 0) {
+            document.getElementById('finalLots').textContent = "0.00 Lots";
+            return;
+        }
+
+        const rawLots = cashRisk / (distance * contractSize);
+        if (isFinite(rawLots) && rawLots > 0) {
+            const finalLots = Math.max(0.01, rawLots);
+            document.getElementById('finalLots').textContent = `${finalLots.toFixed(2)} Lots`;
+        } else {
+            document.getElementById('finalLots').textContent = "0.00 Lots";
+        }
+    }
+
+    function setBalance(val) { document.getElementById('balance').value = val; calculateLots(); }
+    function setRisk(val) { document.getElementById('risk').value = val; calculateLots(); }
+
+    function copyLots() {
+        const lotText = document.getElementById('finalLots').textContent;
+        navigator.clipboard.writeText(lotText).then(() => {
+            triggerToast('MT5 Lot Size Copied!');
+        });
+    }
+
+    function triggerToast(msg) {
+        const toast = document.getElementById('toast');
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    function toggleFaq(el) {
+        el.classList.toggle('active');
+    }
+
+    window.onload = calculateLots;
+</script>
+</body>
+</html>
