@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)file:///D:/Website/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>knots of love by megha — handmade macramé, knotted to order</title>
+<meta name="description" content="Wall hangings, plant hangers and small charms, knotted by hand in India. Every piece is made to order. Message Megha on Instagram to commission yours.">
+<meta name="theme-color" content="#F5EBE1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23A6474F' stroke-width='2.6'%3E%3Cellipse cx='20' cy='10.5' rx='5.4' ry='9.6'/%3E%3Cellipse cx='20' cy='10.5' rx='5.4' ry='9.6' transform='rotate(90 20 20)'/%3E%3Cellipse cx='20' cy='10.5' rx='5.4' ry='9.6' transform='rotate(180 20 20)'/%3E%3Cellipse cx='20' cy='10.5' rx='5.4' ry='9.6' transform='rotate(270 20 20)'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='2.4' fill='%232E211B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./knots of love by megha — handmade macramé, knotted to order_files/css2" rel="stylesheet">
+<style>
+/* ============ tokens ============ */
+:root{
+  --cotton:#F5EBE1;
+  --cotton-2:#EFE2D2;
+  --blush:#EFD9D1;
+  --ink:#2E211B;
+  --ink-soft:#5B463D;
+  --rose:#A6474F;
+  --rose-deep:#7C323B;
+  --marigold:#D99A3E;
+  --night:#251814;
+  --night-line:rgba(243,232,219,.15);
+  --font-d:'Gloock', Georgia, 'Times New Roman', serif;
+  --font-b:'Karla','Segoe UI',system-ui,sans-serif;
+  --font-s:'Ms Madi','Segoe Script',cursive;
+  --gutter:clamp(20px,4vw,56px);
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cotton);
+  color:var(--ink);
+  font:400 17px/1.68 var(--font-b);
+  position:relative;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--rose);color:var(--cotton)}
+a{color:inherit}
+img,svg{display:block}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+.wrap{width:min(1120px, calc(100vw - var(--gutter)*2));margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--cotton);padding:12px 18px;z-index:999;border-radius:0 0 10px 0}
+.skip:focus{left:0}
+:focus-visible{outline:2px dashed var(--marigold);outline-offset:3px}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--rose);z-index:600;pointer-events:none}
+
+/* grain */
+.grain{position:fixed;inset:0;z-index:400;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* thread */
+#threadSvg{position:absolute;top:0;left:0;pointer-events:none;z-index:2;overflow:visible}
+#threadSvg .tpath{fill:none;stroke:var(--rose);stroke-width:1.5;stroke-linecap:round;opacity:.6}
+#threadSvg .tbead{fill:var(--cotton);stroke:var(--rose);stroke-width:1.4;transition:fill .45s}
+#threadSvg .tbead.lit{fill:var(--rose)}
+@media (max-width:1299px){#threadSvg{display:none}}
+
+/* small glyphs */
+.knot-ic{width:1em;height:1em;display:inline-block;vertical-align:-.08em;color:var(--rose)}
+.spark{width:1em;height:1em;display:inline-block;color:var(--marigold)}
+
+/* ============ type ============ */
+h1,h2,h3{font-family:var(--font-d);font-weight:400;letter-spacing:-.015em;line-height:1.02;color:var(--ink)}
+.script{font-family:var(--font-s);font-weight:400;line-height:1.1;color:var(--rose)}
+.lede{max-width:54ch;color:var(--ink-soft);font-size:16.5px}
+
+/* ============ buttons / chips ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15px/1 var(--font-b);letter-spacing:.01em;padding:17px 28px;border-radius:999px;border:1.5px solid transparent;transition:background .25s,color .25s,transform .25s,border-color .25s;text-decoration:none;cursor:pointer}
+.btn--fill{background:var(--rose);color:#FBF3EA}
+.btn--fill:hover{background:var(--rose-deep);transform:translateY(-2px)}
+.btn--line{border-color:rgba(46,33,27,.5);color:var(--ink)}
+.btn--line:hover{background:var(--ink);color:var(--cotton);transform:translateY(-2px)}
+.btn--sm{padding:12px 20px;font-size:13.5px}
+.btn--light{background:var(--cotton);color:var(--ink)}
+.btn--light:hover{background:#FFF9F0;transform:translateY(-2px)}
+.btn--ghost{border-color:rgba(252,242,232,.65);color:#FCF2E8}
+.btn--ghost:hover{background:var(--cotton);color:var(--ink);transform:translateY(-2px)}
+.chip{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(46,33,27,.22);border-radius:999px;padding:9px 16px;font:500 13.5px/1 var(--font-b);letter-spacing:.02em;color:var(--ink-soft)}
+.chip .knot-ic{width:16px;height:16px}
+
+/* ============ header ============ */
+.site-head{position:sticky;top:0;z-index:300;transition:background .3s,box-shadow .3s}
+.site-head::before{content:"";position:absolute;inset:0;background:rgba(245,235,225,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.site-head.scrolled::before{background:rgba(245,235,225,.95);box-shadow:0 1px 0 rgba(46,33,27,.14)}
+.nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;height:78px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:34px;height:34px;color:var(--ink);flex:none}
+.brand-word{font-family:var(--font-d);font-size:23px;line-height:1;letter-spacing:-.01em}
+.brand-word em{font-style:normal}
+.brand-script{font-family:var(--font-s);font-size:19px;color:var(--rose);margin-left:6px;position:relative;top:3px}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+.nav-links a:not(.btn){font:500 14.5px/1 var(--font-b);text-decoration:none;color:var(--ink-soft);padding:6px 0;position:relative}
+.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:0;border-bottom:2px solid var(--rose);transition:right .3s}
+.nav-links a:not(.btn):hover{color:var(--ink)}
+.nav-links a:not(.btn):hover::after{right:0}
+.burger{display:none;width:44px;height:44px;border:1px solid rgba(46,33,27,.3);border-radius:50%;position:relative;flex:none}
+.burger span{position:absolute;left:12px;right:12px;height:1.6px;background:var(--ink);transition:transform .3s,top .3s}
+.burger span:first-child{top:17px}
+.burger span:last-child{top:25px}
+body.menu-open .burger span:first-child{top:21px;transform:rotate(45deg)}
+body.menu-open .burger span:last-child{top:21px;transform:rotate(-45deg)}
+.mobile-menu{display:none}
+
+/* ============ hero ============ */
+.hero{position:relative;padding-block:clamp(36px,5.5vh,68px) clamp(48px,7vh,90px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero-copy .chip{opacity:0;animation:fadeUp .8s cubic-bezier(.22,.61,.36,1) .1s forwards}
+.hero h1{font-size:clamp(48px,6.6vw,92px);margin-top:26px;letter-spacing:-.018em}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.07em}
+.hero h1 .line > span{display:block;transform:translateY(112%);animation:riseMask 1.05s cubic-bezier(.22,.61,.36,1) forwards;animation-delay:var(--dd,.15s)}
+.hero-sub{max-width:47ch;margin-top:26px;color:var(--ink-soft);font-size:17.5px;opacity:0;animation:fadeUp .9s cubic-bezier(.22,.61,.36,1) .55s forwards}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;opacity:0;animation:fadeUp .9s cubic-bezier(.22,.61,.36,1) .68s forwards}
+.proof{display:flex;align-items:center;gap:10px;margin-top:24px;font-size:13.5px;color:var(--ink-soft);opacity:0;animation:fadeUp .9s cubic-bezier(.22,.61,.36,1) .8s forwards}
+.proof .spark{width:11px;height:11px}
+.thread-hint{display:flex;align-items:center;gap:14px;margin-top:34px;opacity:0;animation:fadeUp .9s cubic-bezier(.22,.61,.36,1) .95s forwards}
+.thread-hint .script{font-size:24px;transform:rotate(-2deg)}
+.thread-hint svg{width:30px;height:34px;color:var(--rose);opacity:.8}
+
+.hero-art{position:relative;justify-self:end;width:min(100%,500px);aspect-ratio:.84;border-radius:999px 999px 26px 26px;
+  background:linear-gradient(178deg,#F0D8CD 0%, #ECDDCA 52%, #EFE2CF 100%);
+  display:flex;align-items:flex-end;justify-content:center;
+  opacity:0;animation:artIn 1.2s cubic-bezier(.22,.61,.36,1) .25s forwards}
+.hero-art::before{content:"";position:absolute;inset:13px;border:1px solid rgba(46,33,27,.14);border-radius:inherit;pointer-events:none}
+.hero-art > svg{width:88%;height:96%;margin-bottom:0}
+.hero-art .ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s cubic-bezier(.55,.06,.28,.98) forwards;animation-delay:var(--d,.5s)}
+.hero-art .panel{opacity:0;animation:fadeIn .9s ease .95s forwards}
+.hero-art .bead-dot{opacity:0;animation:fadeIn .6s ease 1.35s forwards}
+.sway{animation:sway 7.5s ease-in-out 2.8s infinite alternate;transform-origin:210px 308px}
+.spark-float{position:absolute;color:var(--marigold);opacity:0;animation:fadeIn 1s ease 1.4s forwards}
+.spark-float svg{width:100%;height:100%}
+.sp1{width:20px;height:20px;top:9%;right:12%}
+.sp2{width:13px;height:13px;top:22%;left:9%}
+.art-note{position:absolute;right:26px;bottom:16px;font-family:var(--font-s);font-size:23px;color:var(--rose-deep);transform:rotate(-2.5deg);opacity:0;animation:fadeIn 1s ease 1.7s forwards}
+@keyframes riseMask{to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes artIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes sway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.1deg)}}
+
+/* ============ marquee ============ */
+.marquee{background:var(--night);color:var(--cotton);overflow:hidden;padding-block:16px;position:relative;z-index:2}
+.mq-track{display:flex;width:max-content;animation:mq 40s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-group{display:flex;align-items:center;gap:clamp(26px,3.4vw,48px);padding-right:clamp(26px,3.4vw,48px)}
+.mq-group span{font-family:var(--font-d);font-size:clamp(17px,2vw,22px);letter-spacing:.01em;white-space:nowrap;color:var(--cotton)}
+.mq-group .knot-ic{width:17px;height:17px;color:#D98E8B;flex:none}
+.mq-group .spark{width:13px;height:13px;color:#E3A94F;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ============ sections ============ */
+.section{padding-block:clamp(76px,9vw,132px);position:relative;scroll-margin-top:96px;overflow:hidden}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:clamp(34px,4.4vw,58px)}
+.sec-head .left{max-width:620px}
+.sec-head h2{font-size:clamp(36px,4.6vw,56px)}
+.sec-head .lede{margin-top:16px}
+.sec-note{font-family:var(--font-s);font-size:27px;color:var(--rose);transform:rotate(-2deg);padding-bottom:8px}
+.sec-head .sec-note{flex:none}
+
+/* scroll reveal with stagger */
+[data-rise]{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1);transition-delay:var(--d,0s)}
+[data-rise].in{opacity:1;transform:none}
+
+/* counter animation */
+.stat b.counter{transition:none}
+
+/* pulse animations */
+@keyframes pulse-soft{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.85}}
+@keyframes wobble{0%,100%{transform:rotate(0deg)}25%{transform:rotate(1.5deg)}75%{transform:rotate(-1.5deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* product card tilt */
+.piece{transition:transform .3s cubic-bezier(.22,.61,.36,1);transform-style:preserve-3d;will-change:transform}
+.piece .art{transition:transform .4s cubic-bezier(.22,.61,.36,1)}
+.piece:hover .art{transform:scale(1.03)}
+.piece--feature:hover .art svg{transform:translateY(-9px) rotate(1deg)}
+
+/* thread glow */
+#threadSvg .tpath{filter:drop-shadow(0 0 6px rgba(166,71,79,.3))}
+
+/* floating elements */
+.hero .chip{animation:chipPulse 2.5s ease-in-out 2s 3}
+
+/* animated marquee glow */
+.marquee::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(217,154,62,.1),transparent);animation:marqueeGlow 3s linear infinite;pointer-events:none}
+
+/* count-up stats */
+.stat b{font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+
+/* hover lift on cards */
+.custom-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;background:rgba(255,255,255,.28);transform:translateY(0)}
+.custom-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(46,33,27,.12)}
+
+/* button micro-interactions */
+.btn{will-change:transform}
+.btn:active{transform:scale(.97) translateY(0)!important}
+.btn--fill:hover{box-shadow:0 8px 28px rgba(166,71,79,.28)}
+.btn--line:hover{box-shadow:0 8px 28px rgba(46,33,27,.16)}
+
+/* care icons bob */
+.care-item{transition:transform .3s}
+.care-item:hover{transform:translateX(6px)}
+.care-item:hover .care-icon{animation:pulse-soft 1.6s ease-in-out}
+
+/* step hover */
+.step{transition:transform .3s}
+.step:hover{transform:translateY(-4px)}
+.step:hover .step-num{animation:wobble .6s ease-in-out}
+
+/* voice hover */
+.voice:hover{box-shadow:0 20px 48px rgba(46,33,27,.15)}
+
+/* order section shine */
+.order h2{background:linear-gradient(110deg,#FCF2E8 30%,#F2CBA0 50%,#FCF2E8 70%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 4s linear infinite}
+
+/* floating action pulse */
+.floaty a{position:relative;overflow:hidden}
+.floaty a::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.2) 50%,transparent 70%);transform:translateX(-100%);animation:floatyShine 3s ease-in-out infinite}
+
+/* chip sparkle */
+.chip{position:relative;transition:transform .3s}
+.chip:hover{transform:translateY(-2px)}
+
+/* footer links slide */
+.foot-col a{transition:color .25s,transform .25s}
+.foot-col a:hover{transform:translateX(3px)}
+
+/* scroll-driven parallax */
+.parallax-layer{will-change:transform;transition:transform .1s linear}
+
+/* nav underline pulse */
+.nav-links a:not(.btn)::after{background:var(--rose);transition:right .3s cubic-bezier(.22,.61,.36,1)}
+
+/* sparkle float */
+.spark-float{will-change:transform,opacity}
+
+/* marquee seamless */
+@keyframes marqueeGlow{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes floatyShine{0%,20%{transform:translateX(-100%)}40%,100%{transform:translateX(100%)}}
+@keyframes shine{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes chipPulse{0%,100%{box-shadow:0 0 0 0 rgba(166,71,79,.2)}50%{box-shadow:0 0 0 10px rgba(166,71,79,0)}}
+
+/* ============ collection ============ */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(30px,3.6vw,46px)}
+.fbtn{font:500 14px/1 var(--font-b);padding:11px 18px;border-radius:999px;border:1.5px solid rgba(46,33,27,.28);color:var(--ink-soft);transition:background .25s,color .25s,border-color .25s}
+.fbtn:hover{border-color:var(--ink)}
+.fbtn.is-on{background:var(--ink);border-color:var(--ink);color:var(--cotton)}
+.collection-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(22px,3vw,42px);row-gap:clamp(44px,5.4vw,76px)}
+.piece{display:flex;flex-direction:column;gap:18px;grid-column:span 4;transition:opacity .35s}
+.piece.is-hidden,.custom-card.is-hidden{display:none}
+.art{display:grid;place-items:center;position:relative;border-radius:999px 999px 22px 22px;background:var(--tint,#EFDCD0);aspect-ratio:.82;overflow:hidden;text-decoration:none}
+.art::before{content:"";position:absolute;inset:11px;border:1px solid rgba(46,33,27,.13);border-radius:inherit;pointer-events:none}
+.art svg{width:74%;height:84%;margin-top:8%;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.piece:hover .art svg{transform:translateY(-9px)}
+.claim{position:absolute;left:50%;bottom:16px;transform:translate(-50%,10px);background:var(--cotton);color:var(--ink);font:600 12.5px/1 var(--font-b);padding:10px 17px;border-radius:999px;opacity:0;transition:opacity .35s,transform .35s;box-shadow:0 8px 20px rgba(46,33,27,.16);white-space:nowrap;pointer-events:none}
+.piece:hover .claim{opacity:1;transform:translate(-50%,0)}
+.piece-meta h3{font-size:25px}
+.meaning{font-family:var(--font-s);font-size:22px;color:var(--rose);margin-top:4px}
+.piece-meta .desc{margin-top:12px;font-size:15.2px;color:var(--ink-soft);max-width:42ch}
+.piece-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:14px}
+.price{font-weight:700;font-size:15px;letter-spacing:.01em}
+.tag{font:500 12px/1 var(--font-b);border:1px solid rgba(46,33,27,.28);border-radius:999px;padding:6px 12px;color:var(--ink-soft);background:rgba(255,255,255,.25)}
+.t1{--tint:#EFD9CE}.t2{--tint:#EAE0CB}.t3{--tint:#F1DCD7}.t4{--tint:#E8DECF}.t5{--tint:#EDD5C9}.t6{--tint:#EADCCF}
+
+.piece--feature{grid-column:span 8;flex-direction:row;align-items:stretch;gap:clamp(24px,3vw,42px)}
+.piece--feature .art{flex:1.08;aspect-ratio:.74;height:auto}
+.piece--feature .art svg{width:80%;height:82%}
+.piece--feature .piece-meta{flex:.92;display:flex;flex-direction:column;justify-content:center}
+.piece--feature h3{font-size:clamp(30px,3vw,38px)}
+.piece--feature .desc{font-size:15.6px}
+
+.custom-card{grid-column:span 8;border:1.5px dashed rgba(46,33,27,.36);border-radius:26px;padding:clamp(26px,3.4vw,44px);display:flex;flex-direction:column;justify-content:space-between;gap:26px;background:rgba(255,255,255,.28)}
+.custom-card .top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.custom-card .knot-big{width:46px;height:46px;color:var(--rose);flex:none}
+.custom-card h3{font-size:clamp(26px,2.6vw,32px);max-width:15ch}
+.custom-card p{margin-top:12px;color:var(--ink-soft);font-size:15.6px;max-width:48ch}
+.textlink{display:inline-block;font-weight:700;font-size:15px;color:var(--rose);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px;transition:color .25s}
+.textlink:hover{color:var(--rose-deep)}
+
+/* ============ anatomy ============ */
+.anatomy{background:var(--night);color:var(--cotton);padding-block:clamp(84px,10vw,140px) calc(clamp(84px,10vw,140px) + 26px);position:relative;z-index:1;scroll-margin-top:96px}
+.anatomy::after{content:"";position:absolute;left:0;right:0;bottom:-26px;height:26px;z-index:1;
+  background:repeating-linear-gradient(90deg,var(--night) 0 4px,transparent 4px 17px);
+  -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent);mask-image:linear-gradient(180deg,#000 30%,transparent)}
+.anatomy h2{color:var(--cotton)}
+.anatomy .lede{color:rgba(243,232,219,.72)}
+.anatomy .sec-note{color:#D98E8B}
+.anatomy-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(44px,6vw,92px);align-items:center;margin-top:clamp(40px,5vw,64px)}
+.figure{position:relative;border:1px solid var(--night-line);border-radius:999px 999px 26px 26px;aspect-ratio:.84;display:grid;place-items:center;
+  background:radial-gradient(closest-side at 50% 42%,rgba(217,142,139,.16),transparent 72%)}
+.figure svg{width:82%;height:88%}
+.pin{position:absolute;width:30px;height:30px;border-radius:50%;background:var(--cotton);color:var(--night);display:grid;place-items:center;font:600 13px/1 var(--font-b);box-shadow:0 0 0 5px rgba(243,232,219,.14);z-index:2}
+.pin-1{left:61%;top:13%}
+.pin-2{left:31%;top:30%}
+.pin-3{left:63%;top:49%}
+.pin-4{left:36%;top:78%}
+.anatomy-list{list-style:none;display:flex;flex-direction:column;gap:24px}
+.anatomy-list li{display:grid;grid-template-columns:auto 1fr;gap:18px;padding-bottom:22px;border-bottom:1px solid var(--night-line)}
+.anatomy-list li:last-child{padding-bottom:0;border-bottom:none}
+.num{width:36px;height:36px;border:1px solid rgba(243,232,219,.4);border-radius:50%;display:grid;place-items:center;font:600 13px/1 var(--font-b);color:#E3A94F;flex:none;margin-top:3px}
+.anatomy-list h3{color:var(--cotton);font-size:22px}
+.anatomy-list p{margin-top:6px;font-size:15.3px;color:rgba(243,232,219,.7);max-width:44ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:clamp(44px,5vw,64px);padding-top:34px;border-top:1px solid var(--night-line)}
+.stat b{display:block;font-family:var(--font-d);font-weight:400;font-size:clamp(28px,3.2vw,42px);letter-spacing:-.01em;color:var(--cotton)}
+.stat span{display:block;margin-top:6px;font-size:13.4px;color:rgba(243,232,219,.6);max-width:16ch}
+
+/* ============ process ============ */
+.process{background:linear-gradient(180deg,var(--cotton) 0%,var(--cotton-2) 14%,var(--cotton-2) 86%,var(--cotton) 100%);scroll-margin-top:96px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,44px);position:relative;margin-top:clamp(44px,5vw,60px)}
+.steps::before{content:"";position:absolute;top:26px;left:2%;right:2%;border-top:1.5px dashed rgba(46,33,27,.3)}
+.step{position:relative}
+.step-num{width:52px;height:52px;border-radius:50%;background:#F7EEE3;border:1.5px solid rgba(46,33,27,.4);display:grid;place-items:center;font-family:var(--font-d);font-size:19px;position:relative;z-index:1;margin-bottom:22px}
+.step h3{font-size:21px;max-width:16ch}
+.step p{margin-top:10px;font-size:14.9px;color:var(--ink-soft);max-width:30ch}
+
+/* ============ voices ============ */
+.voices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,30px)}
+.voice{background:var(--tint,#EFD9D1);border-radius:20px;padding:28px 26px 26px;display:flex;flex-direction:column;gap:18px;transform:rotate(var(--rot,0deg));transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+.voice:hover{transform:rotate(0) translateY(-5px)}
+.voice::before{content:"\201C";font-family:var(--font-d);font-size:66px;line-height:.62;height:28px;color:var(--marigold);display:block}
+.voice p{font-family:var(--font-d);font-size:19.5px;line-height:1.38;letter-spacing:-.01em}
+.who{margin-top:auto;display:flex;align-items:center;gap:9px;font-size:13.8px;color:var(--ink-soft)}
+.who .knot-ic{width:14px;height:14px;flex:none}
+
+/* ============ care ============ */
+.care-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(40px,6vw,80px);align-items:start}
+.care-left h2{font-size:clamp(34px,4vw,50px)}
+.care-left .lede{margin-top:18px}
+.care-left .sec-note{display:inline-block;margin-top:26px}
+.care-item{display:grid;grid-template-columns:46px 1fr;gap:20px;padding:22px 0;border-top:1px dashed rgba(46,33,27,.28)}
+.care-item:first-child{border-top:none;padding-top:0}
+.care-icon{width:46px;height:46px;border-radius:50%;border:1.4px solid rgba(46,33,27,.3);display:grid;place-items:center;color:var(--rose)}
+.care-icon svg{width:21px;height:21px}
+.care-item h3{font-size:19.5px}
+.care-item p{margin-top:5px;font-size:15.2px;color:var(--ink-soft);max-width:52ch}
+
+/* ============ faq ============ */
+.faq-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(40px,6vw,80px);align-items:start}
+.faq-left{position:sticky;top:110px}
+.faq-left h2{font-size:clamp(34px,4vw,50px)}
+.faq-left .lede{margin-top:18px}
+.faq-left .textlink{margin-top:22px}
+.faq-list details{border-top:1px solid rgba(46,33,27,.22)}
+.faq-list details:last-child{border-bottom:1px solid rgba(46,33,27,.22)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:22px 0;font-family:var(--font-d);font-size:20.5px;letter-spacing:-.01em}
+.faq-list summary::-webkit-details-marker{display:none}
+.plus{width:30px;height:30px;border:1px solid rgba(46,33,27,.38);border-radius:50%;position:relative;flex:none;transition:transform .35s,background .35s,border-color .35s}
+.plus::before,.plus::after{content:"";position:absolute;background:var(--ink);transition:background .35s}
+.plus::before{left:9px;right:9px;top:14px;height:1.4px}
+.plus::after{top:9px;bottom:9px;left:14px;width:1.4px}
+details[open] .plus{transform:rotate(45deg);background:var(--rose);border-color:var(--rose)}
+details[open] .plus::before,details[open] .plus::after{background:var(--cotton)}
+.faq-a{padding:0 44px 24px 0;color:var(--ink-soft);font-size:15.6px;max-width:62ch}
+.faq-a p{animation:faqIn .35s ease}
+@keyframes faqIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+/* ============ order ============ */
+.order{background:var(--rose-deep);color:#FCF2E8;position:relative;overflow:hidden;padding-block:clamp(90px,11vw,150px);text-align:center;scroll-margin-top:96px}
+.order .wm{position:absolute;color:#FCF2E8;opacity:.08;pointer-events:none}
+.wm-1{width:520px;height:520px;right:-130px;top:-150px;transform:rotate(14deg)}
+.wm-2{width:360px;height:360px;left:-120px;bottom:-120px;transform:rotate(-10deg)}
+.order h2{color:#FCF2E8;font-size:clamp(46px,6.4vw,84px);position:relative}
+.order .order-lede{max-width:52ch;margin:22px auto 0;color:rgba(252,242,232,.82);font-size:16.8px;position:relative}
+.order .cta-row{justify-content:center;position:relative;margin-top:36px}
+.order-note{margin-top:24px;font-size:13.5px;color:rgba(252,242,232,.62);position:relative}
+.signature{margin-top:clamp(44px,5vw,60px);position:relative}
+.signature .script{font-size:clamp(38px,4vw,50px);color:#F2CBA0;display:inline-block;transform:rotate(-3deg)}
+.signature .spark{width:16px;height:16px;color:#F2CBA0;vertical-align:super;margin-left:8px}
+
+/* ============ footer ============ */
+.site-foot{background:#1E120E;color:#EFE2D2;padding:clamp(56px,7vw,84px) 0 26px}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:clamp(28px,4vw,48px);padding-bottom:clamp(38px,4.6vw,52px);border-bottom:1px solid rgba(239,226,210,.14)}
+.foot-brand .brand{color:#EFE2D2;gap:12px}
+.foot-brand .brand-mark{color:#EFE2D2;width:36px;height:36px}
+.foot-brand .brand-word{font-size:24px}
+.foot-brand .brand-script{color:#D98E8B;font-size:20px}
+.foot-brand p{margin-top:16px;font-size:14px;color:rgba(239,226,210,.62);max-width:30ch}
+.foot-col h4{font-family:var(--font-d);font-weight:400;font-size:16.5px;margin-bottom:16px;color:#EFE2D2}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:14.3px;color:rgba(239,226,210,.75);text-decoration:none;transition:color .25s}
+.foot-col a:hover{color:#EFE2D2;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rose)}
+.foot-col p.small{font-size:13.8px;color:rgba(239,226,210,.62);margin-bottom:16px;max-width:26ch}
+.foot-col .btn--ghost{border-color:rgba(239,226,210,.4);font-size:13px;padding:12px 18px}
+.foot-col .btn--ghost:hover{background:#EFE2D2;color:#1E120E}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:24px;font-size:13px;color:rgba(239,226,210,.5)}
+.foot-bottom a{color:rgba(239,226,210,.7);text-decoration:none}
+.foot-bottom a:hover{color:#EFE2D2}
+.foot-bottom .love{display:inline-flex;align-items:center;gap:7px}
+.foot-bottom .love .knot-ic{width:13px;height:13px;color:#D98E8B}
+
+/* ============ floaty ============ */
+.floaty{position:fixed;right:20px;bottom:20px;z-index:320;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .4s,transform .4s}
+.floaty.show{opacity:1;transform:none;pointer-events:auto}
+.floaty a{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--cotton);font:600 13.5px/1 var(--font-b);padding:14px 20px;border-radius:999px;text-decoration:none;box-shadow:0 10px 26px rgba(30,18,14,.28);transition:background .25s,transform .25s}
+.floaty a:hover{background:var(--rose);transform:translateY(-2px)}
+.floaty svg{width:16px;height:16px}
+
+/* ============ responsive ============ */
+@media (max-width:1080px){
+  .hero-grid{grid-template-columns:1fr;gap:clamp(40px,6vw,64px)}
+  .hero-art{justify-self:center;width:min(100%,460px);order:2}
+  .hero{padding-bottom:clamp(52px,8vh,84px)}
+  .piece{grid-column:span 6}
+  .piece--feature{grid-column:span 12}
+  .custom-card{grid-column:span 12}
+  .anatomy-grid{grid-template-columns:1fr;gap:52px}
+  .figure{max-width:520px;margin-inline:auto}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:44px}
+  .steps::before{display:none}
+  .voices-grid{grid-template-columns:1fr;max-width:640px}
+  .voice{--rot:0deg}
+  .care-grid,.faq-grid{grid-template-columns:1fr;gap:44px}
+  .faq-left{position:static}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:block}
+  .mobile-menu{display:block;position:absolute;left:0;right:0;top:78px;background:rgba(245,235,225,.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(46,33,27,.14);clip-path:inset(0 0 100% 0);transition:clip-path .4s cubic-bezier(.22,.61,.36,1);overflow:hidden}
+  body.menu-open .mobile-menu{clip-path:inset(0 0 0 0)}
+  .mobile-menu ul{list-style:none;padding:18px var(--gutter) 26px;display:flex;flex-direction:column;gap:2px}
+  .mobile-menu a:not(.btn){display:block;padding:14px 0;font-family:var(--font-d);font-size:24px;text-decoration:none;border-bottom:1px dashed rgba(46,33,27,.16)}
+  .mobile-menu .btn{margin-top:16px;width:100%}
+}
+@media (max-width:700px){
+  body{font-size:16.2px}
+  .nav{height:70px}
+  .mobile-menu{top:70px}
+  .hero h1{font-size:clamp(44px,11vw,60px)}
+  .hero-art{width:min(100%,400px)}
+  .art-note{font-size:19px;right:18px;bottom:12px}
+  .piece{grid-column:span 12}
+  .piece--feature{flex-direction:column}
+  .piece--feature .art{aspect-ratio:.82}
+  .piece--feature .piece-meta{padding-top:4px}
+  .piece-meta .desc{max-width:56ch}
+  .steps{grid-template-columns:1fr;row-gap:36px}
+  .stats{grid-template-columns:1fr 1fr;gap:28px 20px}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+  .floaty{right:14px;bottom:14px}
+  .anatomy-list li{gap:14px}
+  .sec-head{align-items:flex-start}
+  .sec-note{font-size:23px}
+  .order .cta-row .btn{width:100%}
+}
+
+/* ============ motion ============ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;animation-delay:0s !important}
+  .hero-art .ln{stroke-dashoffset:0 !important;animation:none !important;opacity:1}
+  .hero-art .panel,.hero-art .bead-dot,.art-note,.spark-float,.hero-copy .chip,.hero-sub,.cta-row,.proof,.thread-hint{opacity:1 !important;transform:none !important;animation:none !important}
+  .hero h1 .line > span{transform:none !important;animation:none !important}
+  .hero-art{opacity:1 !important;transform:none !important;animation:none !important}
+  .sway{animation:none !important}
+  [data-rise]{opacity:1 !important;transform:none !important}
+  .stat b{transition:none !important}
+  .piece{transform:none !important;transition:none !important}
+  .piece .art{transform:none !important}
+  .piece:hover .art svg{transform:translateY(0) rotate(0deg) !important}
+  .custom-card{transition:none !important;box-shadow:none !important}
+  .custom-card:hover{transform:translateY(0) !important;box-shadow:none !important}
+  .btn:active{transform:scale(1) translateY(0) !important}
+  .btn:hover{box-shadow:none !important}
+  .care-item{transition:none !important}
+  .care-item:hover{transform:none !important}
+  .care-item:hover .care-icon{animation:none !important}
+  .step{transition:none !important}
+  .step:hover{transform:none !important}
+  .step:hover .step-num{animation:none !important}
+  .voice:hover{box-shadow:none !important}
+  .order h2{animation:none !important}
+  .floaty a::after{background:none !important}
+  .floaty a{box-shadow:none !important}
+  .foot-col a{transform:none !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="file:///D:/Website/index.html#collection">Skip to the collection</a>
+<div class="scroll-progress" aria-hidden="true" style="width: 70.3356%;"></div>
+
+<!-- ======= sprite ======= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="knotmark" viewBox="0 0 40 40">
+      <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+        <ellipse cx="20" cy="10.5" rx="5.4" ry="9.6"></ellipse>
+        <ellipse cx="20" cy="10.5" rx="5.4" ry="9.6" transform="rotate(90 20 20)"></ellipse>
+        <ellipse cx="20" cy="10.5" rx="5.4" ry="9.6" transform="rotate(180 20 20)"></ellipse>
+        <ellipse cx="20" cy="10.5" rx="5.4" ry="9.6" transform="rotate(270 20 20)"></ellipse>
+      </g>
+      <circle cx="20" cy="20" r="2.4" fill="currentColor"></circle>
+    </symbol>
+    <symbol id="sparksym" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0 Z"></path>
+    </symbol>
+    <pattern id="weaveCard" x="0" y="0" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L46 46 M46 0 L0 46" stroke="#33241D" stroke-width="1.9" opacity=".72" fill="none"></path>
+      <circle cx="23" cy="23" r="2.5" fill="#A6474F"></circle>
+    </pattern>
+
+    <!-- saanjh: wall hanging -->
+    <symbol id="art-saanjh" viewBox="0 0 300 380">
+      <g fill="none" stroke="#33241D" stroke-width="2.2" stroke-linecap="round">
+        <path d="M118 52 C126 28 174 28 182 52"></path>
+        <rect x="44" y="48" width="212" height="9" rx="4.5" fill="#33241D" stroke="none"></rect>
+        <path d="M64 58 V96"></path><path d="M79 58 V96"></path><path d="M94 58 V96"></path><path d="M109 58 V96"></path>
+        <path d="M124 58 V96"></path><path d="M139 58 V96"></path><path d="M154 58 V96" opacity="0"></path>
+        <path d="M161 58 V96"></path><path d="M176 58 V96"></path><path d="M191 58 V96"></path><path d="M206 58 V96"></path>
+        <path d="M221 58 V96"></path><path d="M236 58 V96"></path>
+        <path d="M64 58 C56 130 56 210 62 300"></path>
+        <path d="M236 58 C244 130 244 210 238 300"></path>
+        <path d="M72 96 V246" stroke-width="2.6"></path>
+        <path d="M228 96 V246" stroke-width="2.6"></path>
+        <path d="M72 96 H228" stroke-width="2.6"></path>
+        <path d="M72 246 H228" stroke-width="2.6"></path>
+        <rect x="74" y="98" width="152" height="146" fill="url(#weaveCard)" stroke="none"></rect>
+      </g>
+      <g fill="none" stroke="#33241D" stroke-width="2" stroke-linecap="round" opacity=".9">
+        <path d="M68 246 C66 292 68 330 66 340"></path>
+        <path d="M82 246 C80 296 84 342 82 356"></path>
+        <path d="M96 246 C94 300 98 352 96 370"></path>
+        <path d="M110 246 C108 302 112 360 110 382"></path>
+        <path d="M124 246 C122 304 127 366 124 390"></path>
+        <path d="M138 246 C136 306 141 372 138 396"></path>
+        <path d="M152 246 C150 308 155 376 152 400"></path>
+        <path d="M166 246 C164 306 169 372 166 396"></path>
+        <path d="M180 246 C178 304 183 366 180 390"></path>
+        <path d="M194 246 C192 302 197 360 194 382"></path>
+        <path d="M208 246 C206 300 211 352 208 370"></path>
+        <path d="M222 246 C220 296 225 342 222 356"></path>
+        <path d="M232 246 C230 292 233 330 232 340"></path>
+      </g>
+      <g fill="#D99A3E">
+        <circle cx="103" cy="252" r="2.6"></circle><circle cx="150" cy="252" r="2.6"></circle><circle cx="197" cy="252" r="2.6"></circle>
+      </g>
+    </symbol>
+
+    <!-- bahaar: plant hanger -->
+    <symbol id="art-bahaar" viewBox="0 0 300 380">
+      <g fill="none" stroke="#33241D" stroke-width="2.2" stroke-linecap="round">
+        <path d="M150 14 V30"></path>
+        <circle cx="150" cy="44" r="13"></circle>
+        <path d="M150 57 C118 78 96 120 92 162"></path>
+        <path d="M150 57 C182 78 204 120 208 162"></path>
+        <path d="M150 57 C134 94 128 124 124 162"></path>
+        <path d="M150 57 C166 94 172 124 176 162"></path>
+        <path d="M84 162 C86 200 108 226 150 228 C192 226 214 200 216 162"></path>
+        <ellipse cx="150" cy="162" rx="66" ry="11"></ellipse>
+        <path d="M150 162 C146 122 138 104 118 90"></path>
+        <path d="M150 162 C152 116 168 100 186 82"></path>
+        <path d="M150 162 C150 120 150 100 150 70"></path>
+        <path d="M118 90 C108 74 112 60 122 58 C132 56 138 68 132 82 C128 90 122 92 118 90 Z"></path>
+        <path d="M186 82 C178 64 184 52 194 52 C204 52 208 64 200 78 C196 84 190 86 186 82 Z"></path>
+        <path d="M150 70 C142 50 150 36 160 38 C170 40 172 54 162 66 C158 70 154 72 150 70 Z"></path>
+        <path d="M136 118 C124 108 120 96 128 90 C136 84 146 94 144 106 C143 113 140 118 136 118 Z"></path>
+        <path d="M172 112 C184 102 190 92 182 86 C174 80 164 90 166 102 C167 108 170 112 172 112 Z"></path>
+      </g>
+      <g fill="none" stroke="#33241D" stroke-width="2" stroke-linecap="round" opacity=".9">
+        <path d="M118 228 C116 254 114 274 112 288"></path>
+        <path d="M126 230 C125 258 124 280 123 300"></path>
+        <path d="M134 232 C134 262 133 288 132 310"></path>
+        <path d="M142 232 C142 264 141 292 140 316"></path>
+        <path d="M150 233 C150 266 150 296 150 322"></path>
+        <path d="M158 232 C158 264 159 292 160 316"></path>
+        <path d="M166 232 C166 262 167 288 168 310"></path>
+        <path d="M174 230 C175 258 176 280 177 300"></path>
+        <path d="M182 228 C184 254 186 274 188 288"></path>
+      </g>
+      <g fill="#A6474F">
+        <circle cx="150" cy="96" r="4"></circle>
+        <circle cx="124" cy="162" r="2.8"></circle><circle cx="176" cy="162" r="2.8"></circle>
+      </g>
+      <g fill="#D99A3E">
+        <circle cx="136" cy="236" r="2.4"></circle><circle cx="150" cy="238" r="2.4"></circle><circle cx="164" cy="236" r="2.4"></circle>
+      </g>
+    </symbol>
+
+    <!-- chandni: dreamcatcher -->
+    <symbol id="art-chandni" viewBox="0 0 300 380">
+      <g fill="none" stroke="#33241D" stroke-width="2.2" stroke-linecap="round">
+        <path d="M150 12 V42"></path>
+        <circle cx="150" cy="168" r="96" stroke-width="2.8"></circle>
+        <circle cx="150" cy="168" r="87" stroke-width="1"></circle>
+        <path d="M150 82 Q182 92 224.5 125"></path>
+        <path d="M224.5 125 Q214 160 224.5 211"></path>
+        <path d="M224.5 211 Q188 232 150 254"></path>
+        <path d="M150 254 Q112 232 75.5 211"></path>
+        <path d="M75.5 211 Q86 160 75.5 125"></path>
+        <path d="M75.5 125 Q118 94 150 82"></path>
+        <path d="M150 110 Q176 120 200 139"></path>
+        <path d="M200 139 Q192 168 200 197"></path>
+        <path d="M200 197 Q176 214 150 226"></path>
+        <path d="M150 226 Q124 214 100 197"></path>
+        <path d="M100 197 Q108 168 100 139"></path>
+        <path d="M100 139 Q124 120 150 110"></path>
+        <circle cx="150" cy="168" r="14"></circle>
+        <path d="M150 264 V280"></path>
+        <path d="M150 280 C136 302 136 330 150 354 C164 330 164 302 150 280 Z"></path>
+        <path d="M150 286 V346"></path>
+        <path d="M108 234 L98 286"></path>
+        <g transform="rotate(-16 98 292)">
+          <path d="M98 292 C88 308 88 328 98 344 C108 328 108 308 98 292 Z"></path>
+          <path d="M98 296 V338"></path>
+        </g>
+        <path d="M192 234 L202 286"></path>
+        <g transform="rotate(16 202 292)">
+          <path d="M202 292 C192 308 192 328 202 344 C212 328 212 308 202 292 Z"></path>
+          <path d="M202 296 V338"></path>
+        </g>
+      </g>
+      <g fill="#A6474F">
+        <circle cx="150" cy="82" r="3"></circle><circle cx="224.5" cy="125" r="3"></circle><circle cx="224.5" cy="211" r="3"></circle>
+        <circle cx="150" cy="254" r="3"></circle><circle cx="75.5" cy="211" r="3"></circle><circle cx="75.5" cy="125" r="3"></circle>
+      </g>
+      <g fill="#D99A3E">
+        <circle cx="200" cy="139" r="2.6"></circle><circle cx="200" cy="197" r="2.6"></circle><circle cx="150" cy="226" r="2.6"></circle>
+        <circle cx="100" cy="197" r="2.6"></circle><circle cx="100" cy="139" r="2.6"></circle><circle cx="150" cy="110" r="2.6"></circle>
+        <circle cx="150" cy="272" r="3.4"></circle><circle cx="98" cy="288" r="2.8"></circle><circle cx="202" cy="288" r="2.8"></circle>
+      </g>
+    </symbol>
+
+    <!-- nazar: evil eye charm -->
+    <symbol id="art-nazar" viewBox="0 0 300 380">
+      <g fill="none" stroke="#33241D" stroke-width="2.2" stroke-linecap="round">
+        <path d="M150 22 V64"></path>
+        <circle cx="150" cy="196" r="98" stroke-width="2.8"></circle>
+        <circle cx="150" cy="196" r="74" stroke="#A6474F" stroke-width="2.6"></circle>
+        <circle cx="150" cy="196" r="50" stroke="#D99A3E" stroke-width="2.4"></circle>
+        <path d="M110 285 V322"></path>
+        <path d="M150 294 V338"></path>
+        <path d="M190 285 V322"></path>
+        <path d="M96 268 L88 300"></path>
+        <path d="M204 268 L212 300"></path>
+      </g>
+      <circle cx="150" cy="196" r="26" fill="#33241D"></circle>
+      <circle cx="142" cy="188" r="5.5" fill="#F5EBE1"></circle>
+      <g fill="#D99A3E">
+        <circle cx="150" cy="58" r="3.6"></circle><circle cx="110" cy="289" r="2.6"></circle>
+        <circle cx="150" cy="298" r="2.6"></circle><circle cx="190" cy="289" r="2.6"></circle>
+      </g>
+    </symbol>
+
+    <!-- toran: door garland -->
+    <symbol id="art-toran" viewBox="0 0 300 380">
+      <g fill="none" stroke="#33241D" stroke-width="2.2" stroke-linecap="round">
+        <path d="M18 92 C70 70 230 70 282 92" stroke-width="2.6"></path>
+        <path d="M18 92 C14 124 14 152 18 180"></path>
+        <path d="M282 92 C286 124 286 152 282 180"></path>
+        <path d="M54 76 V96"></path><path d="M108 71 V92"></path><path d="M150 70 V92"></path><path d="M192 71 V92"></path><path d="M246 76 V96"></path>
+        <path d="M54 96 C48 112 46 126 48 140"></path>
+        <path d="M54 96 C54 114 54 128 54 142"></path>
+        <path d="M54 96 C60 112 62 126 60 140"></path>
+        <path d="M150 92 C144 108 142 122 144 136"></path>
+        <path d="M150 92 C150 110 150 124 150 138"></path>
+        <path d="M150 92 C156 108 158 122 156 136"></path>
+        <path d="M246 96 C240 112 238 126 240 140"></path>
+        <path d="M246 96 C246 114 246 128 246 142"></path>
+        <path d="M246 96 C252 112 254 126 252 140"></path>
+        <path d="M108 92 V108"></path>
+        <path d="M100 126 C100 114 116 114 116 126 L119 138 L97 138 Z"></path>
+        <path d="M108 142 V146"></path>
+        <path d="M192 92 V108"></path>
+        <path d="M184 126 C184 114 200 114 200 126 L203 138 L181 138 Z"></path>
+        <path d="M192 142 V146"></path>
+        <path d="M18 180 C16 196 16 208 18 220"></path>
+        <path d="M18 180 C12 198 10 210 10 224"></path>
+        <path d="M18 180 C20 198 22 210 24 224"></path>
+        <path d="M282 180 C284 196 284 208 282 220"></path>
+        <path d="M282 180 C288 198 290 210 290 224"></path>
+        <path d="M282 180 C280 198 278 210 276 224"></path>
+      </g>
+      <g fill="#A6474F">
+        <circle cx="54" cy="96" r="3.2"></circle><circle cx="150" cy="92" r="3.2"></circle><circle cx="246" cy="96" r="3.2"></circle>
+        <circle cx="108" cy="108" r="2.8"></circle><circle cx="192" cy="108" r="2.8"></circle>
+        <circle cx="18" cy="180" r="3.6"></circle><circle cx="282" cy="180" r="3.6"></circle>
+      </g>
+      <g fill="#D99A3E"><circle cx="150" cy="72" r="2.6"></circle></g>
+    </symbol>
+
+    <!-- meher: bag charm -->
+    <symbol id="art-meher" viewBox="0 0 300 380">
+      <g fill="none" stroke="#33241D" stroke-width="2.2" stroke-linecap="round">
+        <circle cx="150" cy="66" r="27" stroke-width="3"></circle>
+        <path d="M137 92 C132 120 132 142 139 158"></path>
+        <path d="M163 92 C168 120 168 142 161 158"></path>
+        <rect x="126" y="94" width="48" height="72" rx="12"></rect>
+        <path d="M126 108 C140 112 160 112 174 108"></path>
+        <path d="M126 124 C140 128 160 128 174 124"></path>
+        <path d="M126 140 C140 144 160 144 174 140"></path>
+        <path d="M126 156 C140 160 160 160 174 156"></path>
+        <path d="M150 94 V166" opacity=".35"></path>
+        <path d="M139 166 C139 176 161 176 161 166"></path>
+      </g>
+      <circle cx="150" cy="178" r="7.5" fill="none" stroke="#A6474F" stroke-width="2.4"></circle>
+      <g fill="none" stroke="#33241D" stroke-width="2" stroke-linecap="round" opacity=".9">
+        <path d="M134 192 C132 216 131 238 130 252"></path>
+        <path d="M139 192 C138 218 138 242 138 258"></path>
+        <path d="M145 192 C144 220 144 246 144 264"></path>
+        <path d="M150 192 V268"></path>
+        <path d="M155 192 C156 220 156 246 156 264"></path>
+        <path d="M161 192 C162 218 162 242 162 258"></path>
+        <path d="M166 192 C168 216 169 238 170 252"></path>
+      </g>
+      <path d="M150 200 C150 192 140 188 140 196 C140 204 150 210 150 214 C150 210 160 204 160 196 C160 188 150 192 150 200 Z" fill="#A6474F" opacity=".92"></path>
+      <g fill="#D99A3E">
+        <circle cx="134" cy="196" r="2.2"></circle><circle cx="166" cy="196" r="2.2"></circle><circle cx="150" cy="58" r="2.6"></circle>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+<svg id="threadSvg" aria-hidden="true" focusable="false" width="84" height="8902" viewBox="0 0 84 8902" style="left: 102.4px; height: 8902px;"><path class="tpath" d="M54 893.625 C53.7 923.5 56.7 620.0 52 1072.5750122070312 C47.3 1525.1 24.7 2980.2 26 3608.91259765625 C27.3 4237.6 59.3 4515.9 60 4844.66259765625 C60.7 5173.4 30.7 5348.8 30 5581.23779296875 C29.3 5813.7 57.0 6009.0 56 6239.33740234375 C55.0 6469.7 25.0 6702.3 24 6963.48779296875 C23.0 7224.7 48.0 7622.5 50 7806.3125 C52.0 7990.1 38.3 8023.0 36 8066.3125" style="stroke-dasharray: 7325.3; stroke-dashoffset: 0;"></path><circle class="tbead lit" cx="52" cy="1072.5750122070312" r="4.2"></circle><circle class="tbead lit" cx="26" cy="3608.91259765625" r="4.2"></circle><circle class="tbead lit" cx="60" cy="4844.66259765625" r="4.2"></circle><circle class="tbead lit" cx="30" cy="5581.23779296875" r="4.2"></circle><circle class="tbead lit" cx="56" cy="6239.33740234375" r="4.2"></circle><circle class="tbead lit" cx="24" cy="6963.48779296875" r="4.2"></circle><circle class="tbead lit" cx="50" cy="7806.3125" r="4.2"></circle></svg>
+
+<header class="site-head scrolled">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="file:///D:/Website/index.html#top" aria-label="knots of love by megha, home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg>
+        <span class="brand-word">knots of love<span class="brand-script">by megha</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="file:///D:/Website/index.html#collection">Collection</a></li>
+        <li><a href="file:///D:/Website/index.html#process">How it’s made</a></li>
+        <li><a href="file:///D:/Website/index.html#care">Care</a></li>
+        <li><a href="file:///D:/Website/index.html#faq">FAQ</a></li>
+        <li><a class="btn btn--fill btn--sm" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">Order on Instagram</a></li>
+      </ul>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="file:///D:/Website/index.html#collection">Collection</a></li>
+      <li><a href="file:///D:/Website/index.html#process">How it’s made</a></li>
+      <li><a href="file:///D:/Website/index.html#care">Care</a></li>
+      <li><a href="file:///D:/Website/index.html#faq">FAQ</a></li>
+      <li><a class="btn btn--fill" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">Order on Instagram</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ================= hero ================= -->
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="chip"><svg class="knot-ic" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg> handmade macramé, made to order</span>
+        <h1>
+          <span class="line"><span style="--dd:.18s">Turning threads</span></span>
+          <span class="line"><span style="--dd:.28s">into beautiful</span></span>
+          <span class="line"><span style="--dd:.38s">spaces.</span></span>
+        </h1>
+        <p class="hero-sub">Wall hangings, plant hangers and small charms, knotted by hand in my studio in India. Every piece is made after you order it, so yours will never be quite like anyone else’s.</p>
+        <div class="cta-row">
+          <a class="btn btn--fill" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">Commission a piece</a>
+          <a class="btn btn--line" href="file:///D:/Website/index.html#collection">Browse the collection</a>
+        </div>
+        <p class="proof"><span>Replies within a day</span><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><use href="#sparksym"></use></svg><span>Ships across India &amp; the world</span></p>
+        <div class="thread-hint" aria-hidden="true">
+          <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M10 6 C44 12 52 32 34 48"></path>
+            <path d="M34 48 L23 44 M34 48 L34 37"></path>
+          </svg>
+          <span class="script">follow the thread</span>
+        </div>
+      </div>
+
+      <figure class="hero-art" aria-label="Line drawing of a macramé wall hanging with a diamond knot pattern and long fringe">
+        <svg viewBox="0 0 420 540" role="img" aria-label="Saanjh wall hanging, a sketch in walnut ink">
+          <defs>
+            <pattern id="weaveHero" width="58" height="58" patternUnits="userSpaceOnUse">
+              <path d="M0 0 L58 58 M58 0 L0 58" stroke="#3A2A22" stroke-width="1.7" opacity=".78" fill="none"></path>
+              <circle cx="29" cy="29" r="2.7" fill="#A6474F"></circle>
+            </pattern>
+          </defs>
+          <circle cx="210" cy="248" r="168" fill="#E9CFC4" opacity=".5"></circle>
+          <circle cx="210" cy="30" r="3.4" fill="#33241D" class="bead-dot"></circle>
+          <path d="M150 78 L206 34" fill="none" stroke="#33241D" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M270 78 L214 34" fill="none" stroke="#33241D" stroke-width="2" stroke-linecap="round"></path>
+          <rect x="64" y="76" width="292" height="12" rx="6" fill="#33241D"></rect>
+          <g class="cords" fill="none" stroke="#33241D" stroke-width="2.2" stroke-linecap="round">
+            <path class="ln" pathLength="1" style="--d:.4s" d="M84 88 V132"></path><path class="ln" pathLength="1" style="--d:.44s" d="M105 88 V132"></path>
+            <path class="ln" pathLength="1" style="--d:.48s" d="M126 88 V132"></path><path class="ln" pathLength="1" style="--d:.52s" d="M147 88 V132"></path>
+            <path class="ln" pathLength="1" style="--d:.56s" d="M168 88 V132"></path><path class="ln" pathLength="1" style="--d:.6s" d="M189 88 V132"></path>
+            <path class="ln" pathLength="1" style="--d:.64s" d="M210 88 V132"></path><path class="ln" pathLength="1" style="--d:.68s" d="M231 88 V132"></path>
+            <path class="ln" pathLength="1" style="--d:.72s" d="M252 88 V132"></path><path class="ln" pathLength="1" style="--d:.76s" d="M273 88 V132"></path>
+            <path class="ln" pathLength="1" style="--d:.8s" d="M294 88 V132"></path><path class="ln" pathLength="1" style="--d:.84s" d="M315 88 V132"></path>
+            <path class="ln" pathLength="1" style="--d:.88s" d="M336 88 V132"></path>
+            <path class="ln" pathLength="1" style="--d:.9s" d="M84 88 C76 150 76 224 84 320"></path>
+            <path class="ln" pathLength="1" style="--d:.94s" d="M336 88 C344 150 344 224 336 320"></path>
+            <path class="ln" pathLength="1" style="--d:1s" d="M96 132 V308"></path>
+            <path class="ln" pathLength="1" style="--d:1.05s" d="M324 132 V308"></path>
+            <path class="ln" pathLength="1" style="--d:1.1s" d="M96 132 H324"></path>
+            <path class="ln" pathLength="1" style="--d:1.15s" d="M96 308 H324"></path>
+          </g>
+          <rect class="panel" x="98" y="134" width="224" height="172" fill="url(#weaveHero)"></rect>
+          <g class="sway">
+            <g fill="none" stroke="#33241D" stroke-width="2" stroke-linecap="round" opacity=".92">
+              <path class="ln" pathLength="1" style="--d:1.2s" d="M93 308 C90 372 96 452 93 470"></path>
+              <path class="ln" pathLength="1" style="--d:1.22s" d="M105 308 C102 378 108 466 105 486"></path>
+              <path class="ln" pathLength="1" style="--d:1.24s" d="M117 308 C114 384 120 480 117 504"></path>
+              <path class="ln" pathLength="1" style="--d:1.26s" d="M129 308 C126 390 132 494 129 520"></path>
+              <path class="ln" pathLength="1" style="--d:1.28s" d="M141 308 C138 396 144 508 141 536"></path>
+              <path class="ln" pathLength="1" style="--d:1.3s" d="M153 308 C150 400 156 516 153 548"></path>
+              <path class="ln" pathLength="1" style="--d:1.32s" d="M165 308 C162 404 168 524 165 558"></path>
+              <path class="ln" pathLength="1" style="--d:1.34s" d="M177 308 C174 406 180 530 177 564"></path>
+              <path class="ln" pathLength="1" style="--d:1.36s" d="M189 308 C186 408 192 534 189 568"></path>
+              <path class="ln" pathLength="1" style="--d:1.38s" d="M201 308 C198 410 204 538 201 572"></path>
+              <path class="ln" pathLength="1" style="--d:1.4s" d="M213 308 C210 410 216 538 213 572"></path>
+              <path class="ln" pathLength="1" style="--d:1.42s" d="M225 308 C222 408 228 534 225 568"></path>
+              <path class="ln" pathLength="1" style="--d:1.44s" d="M237 308 C234 406 240 530 237 564"></path>
+              <path class="ln" pathLength="1" style="--d:1.46s" d="M249 308 C246 404 252 524 249 558"></path>
+              <path class="ln" pathLength="1" style="--d:1.48s" d="M261 308 C258 400 264 516 261 548"></path>
+              <path class="ln" pathLength="1" style="--d:1.5s" d="M273 308 C270 396 276 508 273 536"></path>
+              <path class="ln" pathLength="1" style="--d:1.52s" d="M285 308 C282 390 288 494 285 520"></path>
+              <path class="ln" pathLength="1" style="--d:1.54s" d="M297 308 C294 384 300 480 297 504"></path>
+              <path class="ln" pathLength="1" style="--d:1.56s" d="M309 308 C306 378 312 466 309 486"></path>
+              <path class="ln" pathLength="1" style="--d:1.58s" d="M321 308 C318 372 324 452 321 470"></path>
+            </g>
+          </g>
+          <g fill="#D99A3E" class="bead-dot">
+            <circle cx="126" cy="316" r="3"></circle><circle cx="168" cy="316" r="3"></circle><circle cx="210" cy="316" r="3"></circle><circle cx="252" cy="316" r="3"></circle><circle cx="294" cy="316" r="3"></circle>
+          </g>
+        </svg>
+        <span class="spark-float sp1" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#sparksym"></use></svg></span>
+        <span class="spark-float sp2" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#sparksym"></use></svg></span>
+        <figcaption class="art-note">no. 48, went home to pune</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= marquee ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      <div class="mq-group">
+        <span>handmade with love</span><svg class="knot-ic" viewBox="0 0 40 40"><use href="#knotmark"></use></svg>
+        <span>boho decor &amp; gifts</span><svg class="spark" viewBox="0 0 24 24"><use href="#sparksym"></use></svg>
+        <span>personalised macramé</span><svg class="knot-ic" viewBox="0 0 40 40"><use href="#knotmark"></use></svg>
+        <span>turning threads into beautiful spaces</span><svg class="spark" viewBox="0 0 24 24"><use href="#sparksym"></use></svg>
+      </div>
+      <div class="mq-group">
+        <span>handmade with love</span><svg class="knot-ic" viewBox="0 0 40 40"><use href="#knotmark"></use></svg>
+        <span>boho decor &amp; gifts</span><svg class="spark" viewBox="0 0 24 24"><use href="#sparksym"></use></svg>
+        <span>personalised macramé</span><svg class="knot-ic" viewBox="0 0 40 40"><use href="#knotmark"></use></svg>
+        <span>turning threads into beautiful spaces</span><svg class="spark" viewBox="0 0 24 24"><use href="#sparksym"></use></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= collection ================= -->
+  <section class="section" id="collection" data-thread="">
+    <div class="wrap">
+      <div class="sec-head in" data-rise="">
+        <div class="left">
+          <h2>The collection</h2>
+          <p class="lede">Six pieces I make most often. Sizes, lengths and cord colours are yours to choose, and prices are starting points, not final ones.</p>
+        </div>
+        <span class="sec-note">made after you order</span>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter the collection">
+        <button class="fbtn is-on" data-filter="all" aria-pressed="true">All pieces</button>
+        <button class="fbtn" data-filter="walls" aria-pressed="false">Walls</button>
+        <button class="fbtn" data-filter="plants" aria-pressed="false">Plants</button>
+        <button class="fbtn" data-filter="charms" aria-pressed="false">Charms</button>
+        <button class="fbtn" data-filter="gifting" aria-pressed="false">Gifting</button>
+      </div>
+
+      <div class="collection-grid">
+        <!-- saanjh -->
+        <article class="piece piece--feature t1" data-cats="walls">
+          <a class="art" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener" aria-label="Saanjh wall hanging. Message Megha on Instagram to order.">
+            <svg viewBox="0 0 300 380" role="img" aria-label="Sketch of a wall hanging with a diamond knot panel and long fringe"><use href="#art-saanjh"></use></svg>
+            <span class="claim">DM “saanjh” to order</span>
+          </a>
+          <div class="piece-meta">
+            <h3>Saanjh</h3>
+            <p class="meaning">the hour the lamps go on</p>
+            <p class="desc">A wide curtain of square knots in counted diamonds, finished with dressed fringe and a sanded oak dowel. About 48 inches tall, made to your wall’s width.</p>
+            <div class="piece-foot"><span class="price">from ₹2,400</span><span class="tag">best seller</span></div>
+          </div>
+        </article>
+
+        <!-- bahaar -->
+        <article class="piece t2" data-cats="plants">
+          <a class="art" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener" aria-label="Bahaar plant hanger. Message Megha on Instagram to order.">
+            <svg viewBox="0 0 300 380" role="img" aria-label="Sketch of a macramé plant hanger holding a potted plant"><use href="#art-bahaar"></use></svg>
+            <span class="claim">DM “bahaar” to order</span>
+          </a>
+          <div class="piece-meta">
+            <h3>Bahaar</h3>
+            <p class="meaning">spring, for your balcony</p>
+            <p class="desc">Four cords, one pot, no drilling. Holds planters up to six inches, indoors or out.</p>
+            <div class="piece-foot"><span class="price">from ₹1,100</span><span class="tag">made to order</span></div>
+          </div>
+        </article>
+
+        <!-- nazar -->
+        <article class="piece t3" data-cats="charms gifting">
+          <a class="art" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener" aria-label="Nazar evil eye charm. Message Megha on Instagram to order.">
+            <svg viewBox="0 0 300 380" role="img" aria-label="Sketch of a hanging evil eye charm in concentric rings"><use href="#art-nazar"></use></svg>
+            <span class="claim">DM “nazar” to order</span>
+          </a>
+          <div class="piece-meta">
+            <h3>Nazar</h3>
+            <p class="meaning">a kinder kind of eye</p>
+            <p class="desc">A door charm against the evil eye, in rose, marigold and ink. Seven tiny knots, one small tassel.</p>
+            <div class="piece-foot"><span class="price">from ₹650</span><span class="tag">gift-wrapped</span></div>
+          </div>
+        </article>
+
+        <!-- chandni -->
+        <article class="piece t4" data-cats="walls">
+          <a class="art" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener" aria-label="Chandni dreamcatcher. Message Megha on Instagram to order.">
+            <svg viewBox="0 0 300 380" role="img" aria-label="Sketch of a dreamcatcher with a woven web and three feathers"><use href="#art-chandni"></use></svg>
+            <span class="claim">DM “chandni” to order</span>
+          </a>
+          <div class="piece-meta">
+            <h3>Chandni</h3>
+            <p class="meaning">moonlight, held still</p>
+            <p class="desc">A dreamcatcher with a soft web and three hand-trimmed feathers. About 22 inches across.</p>
+            <div class="piece-foot"><span class="price">from ₹1,600</span><span class="tag">made to order</span></div>
+          </div>
+        </article>
+
+        <!-- toran -->
+        <article class="piece t5" data-cats="gifting walls">
+          <a class="art" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener" aria-label="Toran door garland. Message Megha on Instagram to order.">
+            <svg viewBox="0 0 300 380" role="img" aria-label="Sketch of a festive doorway garland with bells and tassels"><use href="#art-toran"></use></svg>
+            <span class="claim">DM “toran” to order</span>
+          </a>
+          <div class="piece-meta">
+            <h3>Toran</h3>
+            <p class="meaning">for the doorway you love most</p>
+            <p class="desc">Five bells and two tassels on a swagged cord, to ring in whoever comes home.</p>
+            <div class="piece-foot"><span class="price">from ₹1,900</span><span class="tag">festive</span></div>
+          </div>
+        </article>
+
+        <!-- meher -->
+        <article class="piece t6" data-cats="charms gifting">
+          <a class="art" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener" aria-label="Meher bag charm. Message Megha on Instagram to order.">
+            <svg viewBox="0 0 300 380" role="img" aria-label="Sketch of a small keyring charm with a knot block, heart bead and tassel"><use href="#art-meher"></use></svg>
+            <span class="claim">DM “meher” to order</span>
+          </a>
+          <div class="piece-meta">
+            <h3>Meher</h3>
+            <p class="meaning">a little kindness to carry</p>
+            <p class="desc">A mini square-knot charm with a heart bead, for keys, totes or a friend’s new bag.</p>
+            <div class="piece-foot"><span class="price">from ₹450</span><span class="tag">custom colours</span></div>
+          </div>
+        </article>
+
+        <!-- custom -->
+        <aside class="custom-card" data-cats="custom">
+          <div class="top">
+            <div>
+              <h3>Nothing here quite your size?</h3>
+              <p>Tell me about the wall, the window or the person you’re gifting. Commissions are my favourite kind of mail, whether it’s one piece or forty.</p>
+            </div>
+            <svg class="knot-big" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg>
+          </div>
+          <a class="textlink" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">Start a custom piece</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= anatomy ================= -->
+  <section class="anatomy" id="anatomy" data-thread="">
+    <div class="wrap">
+      <div class="sec-head in" data-rise="">
+        <div class="left">
+          <h2>A wall hanging, taken apart.</h2>
+          <p class="lede">One Saanjh, in the studio, before it’s wrapped. Nothing is rushed and nothing is hidden.</p>
+        </div>
+        <span class="sec-note">what you’re paying for</span>
+      </div>
+
+      <div class="anatomy-grid">
+        <div class="figure" aria-label="Annotated sketch of a macramé wall hanging">
+          <svg viewBox="0 0 420 500" role="img" aria-label="Line sketch of the Saanjh wall hanging in chalk on a dark background">
+            <defs>
+              <pattern id="weaveDark" width="46" height="46" patternUnits="userSpaceOnUse">
+                <path d="M0 0 L46 46 M46 0 L0 46" stroke="#EFE0CE" stroke-width="1.5" opacity=".75" fill="none"></path>
+                <circle cx="23" cy="23" r="2.3" fill="#D98E8B"></circle>
+              </pattern>
+            </defs>
+            <circle cx="210" cy="236" r="152" fill="#3A2620" opacity=".55"></circle>
+            <path d="M150 92 L206 52" fill="none" stroke="#EFE0CE" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M270 92 L214 52" fill="none" stroke="#EFE0CE" stroke-width="1.8" stroke-linecap="round"></path>
+            <circle cx="210" cy="48" r="3" fill="#EFE0CE"></circle>
+            <rect x="72" y="90" width="276" height="11" rx="5.5" fill="#EFE0CE"></rect>
+            <g fill="none" stroke="#EFE0CE" stroke-width="1.8" stroke-linecap="round">
+              <path d="M118 101 V138"></path><path d="M136 101 V138"></path><path d="M154 101 V138"></path><path d="M172 101 V138"></path>
+              <path d="M190 101 V138"></path><path d="M208 101 V138"></path><path d="M226 101 V138"></path><path d="M244 101 V138"></path>
+              <path d="M262 101 V138"></path><path d="M280 101 V138"></path><path d="M298 101 V138"></path>
+              <path d="M118 101 C110 170 110 240 116 330"></path>
+              <path d="M298 101 C306 170 306 240 300 330"></path>
+              <path d="M126 138 V304" stroke-width="2.2"></path>
+              <path d="M290 138 V304" stroke-width="2.2"></path>
+              <path d="M126 138 H290" stroke-width="2.2"></path>
+              <path d="M126 304 H290" stroke-width="2.2"></path>
+            </g>
+            <rect x="128" y="140" width="160" height="162" fill="url(#weaveDark)"></rect>
+            <g fill="none" stroke="#EFE0CE" stroke-width="1.7" stroke-linecap="round" opacity=".9">
+              <path d="M120 304 C118 348 122 396 120 412"></path>
+              <path d="M132 304 C130 352 134 406 132 424"></path>
+              <path d="M144 304 C142 356 146 416 144 436"></path>
+              <path d="M156 304 C154 360 158 426 156 448"></path>
+              <path d="M168 304 C166 364 170 434 168 458"></path>
+              <path d="M180 304 C178 366 182 440 180 466"></path>
+              <path d="M192 304 C190 368 194 444 192 470"></path>
+              <path d="M204 304 C202 368 206 446 204 472"></path>
+              <path d="M216 304 C214 368 218 444 216 470"></path>
+              <path d="M228 304 C226 366 230 440 228 466"></path>
+              <path d="M240 304 C238 364 242 434 240 458"></path>
+              <path d="M252 304 C250 360 254 426 252 448"></path>
+              <path d="M264 304 C262 356 266 416 264 436"></path>
+              <path d="M276 304 C274 352 278 406 276 424"></path>
+              <path d="M288 304 C286 348 290 396 288 412"></path>
+            </g>
+            <g fill="#D99A3E">
+              <circle cx="146" cy="312" r="2.6"></circle><circle cx="186" cy="312" r="2.6"></circle><circle cx="226" cy="312" r="2.6"></circle><circle cx="266" cy="312" r="2.6"></circle>
+            </g>
+          </svg>
+          <span class="pin pin-1">1</span>
+          <span class="pin pin-2">2</span>
+          <span class="pin pin-3">3</span>
+          <span class="pin pin-4">4</span>
+        </div>
+
+        <div>
+          <ol class="anatomy-list">
+            <li>
+              <span class="num" aria-hidden="true">1</span>
+              <div>
+                <h3>the dowel</h3>
+                <p>Sanded oak, oiled by hand, so it ages like good furniture instead of a craft-supply stick.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">2</span>
+              <div>
+                <h3>the spine</h3>
+                <p>Twelve metres of single-ply cotton, doubled at every point that carries weight.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">3</span>
+              <div>
+                <h3>the pattern</h3>
+                <p>Square knots in counted diamonds. If a row is off by one, it comes undone and starts again.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">4</span>
+              <div>
+                <h3>the fringe</h3>
+                <p>Combed three times, trimmed once, then shaken out until it falls perfectly straight.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="stats">
+            <div class="stat"><b>1,400+</b><span>knots tied by hand</span></div>
+            <div class="stat"><b>3</b><span>quiet studio days</span></div>
+            <div class="stat"><b>12 m</b><span>of cotton cord</span></div>
+            <div class="stat"><b>1 of 1</b><span>never repeated</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= process ================= -->
+  <section class="section process" id="process" data-thread="">
+    <div class="wrap">
+      <div class="sec-head in" data-rise="">
+        <div class="left">
+          <h2>How we make it together.</h2>
+          <p class="lede">No stock, no warehouse, no middle. Just four steps and a lot of quiet knotting.</p>
+        </div>
+        <span class="sec-note">from your DM to your wall</span>
+      </div>
+
+      <div class="steps">
+        <div class="step in" data-rise="" style="--d:.05s">
+          <span class="step-num">1</span>
+          <h3>Tell me about the space.</h3>
+          <p>Message me a photo of the wall or window, plus the size, colours and budget you have in mind. No brief is too small.</p>
+        </div>
+        <div class="step in" data-rise="" style="--d:.15s">
+          <span class="step-num">2</span>
+          <h3>I sketch and pick the cord.</h3>
+          <p>You approve a rough sketch and the cord shades before I tie the first knot, so there are no surprises.</p>
+        </div>
+        <div class="step in" data-rise="" style="--d:.25s">
+          <span class="step-num">3</span>
+          <h3>The knotting days.</h3>
+          <p>Two to five quiet days of work. You get progress photos, mostly because I can’t resist sending them.</p>
+        </div>
+        <div class="step in" data-rise="" style="--d:.35s">
+          <span class="step-num">4</span>
+          <h3>Wrapped and sent.</h3>
+          <p>Kraft paper, cotton twine, a care card. Tracked shipping across India and abroad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= voices ================= -->
+  <section class="section" id="voices" data-thread="">
+    <div class="wrap">
+      <div class="sec-head in" data-rise="">
+        <div class="left">
+          <h2>Words from the other side of the wall.</h2>
+        </div>
+        <span class="sec-note">from the saved stories</span>
+      </div>
+      <div class="voices-grid">
+        <blockquote class="voice t1 in" data-rise="" style="--rot:-.7deg;--d:.05s">
+          <p></p>
+          <footer class="who"><svg class="knot-ic" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg> </footer>
+        </blockquote>
+        <blockquote class="voice t2 in" data-rise="" style="--rot:.5deg;--d:.15s">
+          <p></p>
+          <footer class="who"><svg class="knot-ic" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg> </footer>
+        </blockquote>
+        <blockquote class="voice t3 in" data-rise="" style="--rot:-.4deg;--d:.25s">
+          <p></p>
+          <footer class="who"><svg class="knot-ic" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= care ================= -->
+  <section class="section" id="care" data-thread="">
+    <div class="wrap">
+      <div class="care-grid">
+        <div class="care-left in" data-rise="">
+          <h2>Keeping the knots happy.</h2>
+          <p class="lede">Macramé is forgiving. Four small habits keep it looking new for years, and years is the plan.</p>
+          <span class="sec-note">care notes no. 1 to 4</span>
+        </div>
+        <div class="care-list">
+          <div class="care-item in" data-rise="" style="--d:.05s">
+            <span class="care-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M4 20 L15 9"></path><path d="M13 4 L20 11"></path><path d="M9 8 L16 15"></path><path d="M2 22 L5 19"></path>
+              </svg>
+            </span>
+            <div><h3>Dust, softly.</h3><p>Once a month, a soft brush or a cool hairdryer on low. Never a damp cloth, and never a scrubbing hand.</p></div>
+          </div>
+          <div class="care-item in" data-rise="" style="--d:.12s">
+            <span class="care-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5 V5 M12 19 V21.5 M2.5 12 H5 M19 12 H21.5 M5.2 5.2 L6.9 6.9 M17.1 17.1 L18.8 18.8 M18.8 5.2 L17.1 6.9 M6.9 17.1 L5.2 18.8"></path>
+              </svg>
+            </span>
+            <div><h3>Sunlight, in moderation.</h3><p>Cotton enjoys the light, but keep strongly dyed cords out of harsh afternoon sun, or the colour will slowly walk away.</p></div>
+          </div>
+          <div class="care-item in" data-rise="" style="--d:.19s">
+            <span class="care-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M6 3 V21"></path><path d="M6 6 C12 3 18 3 21 6"></path><path d="M10 6 V13"></path><path d="M14 5 V14"></path><path d="M18 5 V12"></path>
+              </svg>
+            </span>
+            <div><h3>Comb the fringe.</h3><p>Small pulls happen. Smooth them back with a wide-tooth comb, one section at a time, from the bottom down.</p></div>
+          </div>
+          <div class="care-item in" data-rise="" style="--d:.26s">
+            <span class="care-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M12 3 C12 3 5 11 5 15.5 A7 7 0 0 0 19 15.5 C19 11 12 3 12 3 Z"></path><path d="M4 4 L20 20"></path>
+              </svg>
+            </span>
+            <div><h3>No machines, ever.</h3><p>Spot clean only. If something spills, blot it, then let it air dry away from heat. Knots deserve better than a spin cycle.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= faq ================= -->
+  <section class="section" id="faq" data-thread="">
+    <div class="wrap">
+      <div class="faq-grid">
+        <div class="faq-left in" data-rise="">
+          <h2>The questions I get most.</h2>
+          <p class="lede">Anything else, ask me straight in the DMs. I answer every message myself, Monday to Saturday.</p>
+          <a class="textlink" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">Ask me anything</a>
+        </div>
+        <div class="faq-list">
+          <details open="">
+            <summary>Can I ask for a custom size or colour?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Almost always yes. Most wall hangings can be made to any width, and cords come in natural, sand, rose, terracotta and near-black. Custom shades need about a week’s notice.</p></div>
+          </details>
+          <details>
+            <summary>How long does a piece take?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Charms and keyrings take two to three days. Wall hangings take five to ten, including drying and photographs. I always confirm the date before you pay.</p></div>
+          </details>
+          <details>
+            <summary>Do you ship outside India?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Yes, tracked. Most international parcels arrive in seven to fourteen days, and any customs duties are paid by the receiver. I pack everything to survive the journey.</p></div>
+          </details>
+          <details>
+            <summary>Do you take bulk or corporate orders?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Yes, from ten pieces up. I do branded tags, matched dye lots and can hit a fixed event date if you message at least three weeks ahead.</p></div>
+          </details>
+          <details>
+            <summary>What if it arrives damaged?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Send me a photo within 48 hours and I’ll repair or remake it. In four years of shipping, I’ve only had to do it twice.</p></div>
+          </details>
+          <details>
+            <summary>Is it safe around pets and children?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>Cotton cord and oak dowel, so no sharp edges anywhere. Keep beaded charms and dreamcatchers with feathers out of small hands and curious mouths.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= order ================= -->
+  <section class="order" id="order" data-thread="">
+    <svg class="wm wm-1" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg>
+    <svg class="wm wm-2" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg>
+    <div class="wrap">
+      <h2>Your wall is waiting.</h2>
+      <p class="order-lede">Tell me its size, its light and the colours you keep coming back to. We’ll take it from there, one knot at a time.</p>
+      <div class="cta-row">
+        <a class="btn btn--light" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">Message on Instagram</a>
+        <a class="btn btn--ghost" href="file:///D:/Website/index.html#collection">See the collection</a>
+      </div>
+      <p class="order-note">Orders happen in Instagram DMs. I reply within a day, Monday to Saturday.</p>
+      <div class="signature">
+        <span class="script">with love, Megha</span><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><use href="#sparksym"></use></svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= footer ================= -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="file:///D:/Website/index.html#top" aria-label="knots of love by megha, back to top">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg>
+          <span class="brand-word">knots of love<span class="brand-script">by megha</span></span>
+        </a>
+        <p>Macramé knotted slowly, mailed with care, from my studio in India.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="file:///D:/Website/index.html#collection">The collection</a></li>
+          <li><a href="file:///D:/Website/index.html#collection">Custom pieces</a></li>
+          <li><a href="file:///D:/Website/index.html#faq">Corporate &amp; events</a></li>
+          <li><a href="file:///D:/Website/index.html#care">Care notes</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Good to know</h4>
+        <ul>
+          <li><a href="file:///D:/Website/index.html#process">How it’s made</a></li>
+          <li><a href="file:///D:/Website/index.html#faq">Shipping</a></li>
+          <li><a href="file:///D:/Website/index.html#faq">FAQ</a></li>
+          <li><a href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">@knotsoflove.bymegha</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Say hello</h4>
+        <p class="small">The fastest way to reach me is a DM on Instagram.</p>
+        <a class="btn btn--ghost btn--sm" href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">Message Megha</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> knots of love by megha</span>
+      <span class="love">made with love, and a great many knots <svg class="knot-ic" viewBox="0 0 40 40" aria-hidden="true"><use href="#knotmark"></use></svg></span>
+      <span>Handmade in India</span>
+      <a href="file:///D:/Website/index.html#top">Back to the top</a>
+    </div>
+  </div>
+</footer>
+
+<div class="floaty show" id="floaty">
+  <a href="https://instagram.com/knotsoflove.bymegha" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle>
+    </svg>
+    Message Megha
+  </a>
+</div>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- scroll progress ---------- */
+  var progressBar = document.querySelector('.scroll-progress');
+  function updateProgress(){
+    if(!progressBar) return;
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
+    progressBar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+  }
+
+  /* ---------- header + floaty ---------- */
+  var head = document.querySelector('.site-head');
+  var floaty = document.getElementById('floaty');
+  var hero = document.querySelector('.hero');
+  function onScrollChrome(){
+    var y = window.scrollY;
+    head.classList.toggle('scrolled', y > 24);
+    if(hero){ floaty.classList.toggle('show', y > hero.offsetHeight + 120); }
+    updateProgress();
+  }
+  window.addEventListener('scroll', onScrollChrome, {passive:true});
+  onScrollChrome();
+
+  /* ---------- mobile menu ---------- */
+  var burger = document.querySelector('.burger');
+  if(burger){
+    burger.addEventListener('click', function(){
+      var open = document.body.classList.toggle('menu-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(function(a){
+      a.addEventListener('click', function(){
+        document.body.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  /* ---------- collection filters ---------- */
+  var fbtns = document.querySelectorAll('.fbtn');
+  var pieces = document.querySelectorAll('.piece, .custom-card');
+  fbtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      fbtns.forEach(function(b){ b.classList.remove('is-on'); b.setAttribute('aria-pressed','false'); });
+      btn.classList.add('is-on'); btn.setAttribute('aria-pressed','true');
+      var f = btn.dataset.filter;
+      pieces.forEach(function(p){
+        var cats = (p.dataset.cats || '').split(' ');
+        var show = (f === 'all') || cats.indexOf(f) !== -1;
+        p.classList.toggle('is-hidden', !show);
+      });
+    });
+  });
+
+  /* ---------- reveal ---------- */
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('[data-rise]').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('[data-rise]').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- footer year ---------- */
+  var yr = document.getElementById('year');
+  if(yr){ yr.textContent = new Date().getFullYear(); }
+
+  /* ---------- count-up stats ---------- */
+  var statBold = document.querySelectorAll('.stat b');
+  var counts = [
+    {target:'1,400+', end:1400, suffix:'+'},
+    {target:'3', end:3, suffix:''},
+    {target:'12 m', end:12, suffix:' m'},
+    {target:'1 of 1', end:1, suffix:' of 1'}
+  ];
+  function animateCount(el, end, suffix, hasCommas){
+    var start = performance.now();
+    var dur = 1800;
+    var raf;
+    function tick(now){
+      var p = Math.min(1, (now - start) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = Math.round(end * eased);
+      el.textContent = (hasCommas ? val.toLocaleString('en-IN') : val) + suffix;
+      if(p < 1){ raf = requestAnimationFrame(tick); }
+    }
+    raf = requestAnimationFrame(tick);
+  }
+  if(!reduceMotion && 'IntersectionObserver' in window){
+    var statIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var el = e.target;
+          var idx = Array.prototype.indexOf.call(statBold, el);
+          var c = counts[idx];
+          if(c){ animateCount(el, c.end, c.suffix, idx === 0 || idx === 2); }
+          statIO.unobserve(el);
+        }
+      });
+    }, {threshold:.5});
+    statBold.forEach(function(b){ statIO.observe(b); });
+  }
+
+  /* ---------- parallax on decorative art ---------- */
+  if(!reduceMotion){
+    var heroArt = document.querySelector('.hero-art svg');
+    var figure = document.querySelector('.figure svg');
+    var orderWms = document.querySelectorAll('.order .wm');
+    var parallaxTargets = [];
+    if(heroArt) parallaxTargets.push({el:heroArt, speed:0.05, base:0});
+    if(figure) parallaxTargets.push({el:figure, speed:0.06, base:0});
+    orderWms.forEach(function(w,i){ parallaxTargets.push({el:w, speed:0.08 + i*0.03, base:0}); });
+
+    var pTicking = false;
+    function runParallax(){
+      var mid = window.innerHeight / 2;
+      parallaxTargets.forEach(function(t){
+        var r = t.el.getBoundingClientRect();
+        var center = r.top + r.height/2;
+        var delta = (center - mid) * t.speed;
+        t.el.style.transform = 'translateY(' + (-delta).toFixed(1) + 'px)';
+      });
+      pTicking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!pTicking){ requestAnimationFrame(runParallax); pTicking = true; }
+    }, {passive:true});
+    runParallax();
+  }
+
+  /* ---------- 3D tilt on product cards ---------- */
+  if(!reduceMotion && window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.piece').forEach(function(card){
+      card.addEventListener('pointermove', function(e){
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - .5;
+        var py = (e.clientY - r.top) / r.height - .5;
+        card.style.transform = 'perspective(900px) rotateX(' + (-py*3.5).toFixed(2) + 'deg) rotateY(' + (px*3.5).toFixed(2) + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('pointerleave', function(){
+        card.style.transform = '';
+      });
+    });
+
+    /* magnetic buttons */
+    document.querySelectorAll('.btn--fill').forEach(function(btn){
+      btn.addEventListener('pointermove', function(e){
+        var r = btn.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - .5;
+        var py = (e.clientY - r.top) / r.height - .5;
+        btn.style.transform = 'translate(' + (px*5).toFixed(1) + 'px,' + (py*4 - 2).toFixed(1) + 'px)';
+      });
+      btn.addEventListener('pointerleave', function(){
+        btn.style.transform = '';
+      });
+    });
+  }
+
+  /* ---------- the thread ---------- */
+  var svgNS = 'http://www.w3.org/2000/svg';
+  var threadSvg = document.getElementById('threadSvg');
+  var points = [], beads = [], threadLen = 0, threadPath = null;
+  var anchorEls = Array.prototype.slice.call(document.querySelectorAll('[data-thread]'));
+  var heroWrap = document.querySelector('.hero');
+
+  function smoothPath(pts){
+    if(pts.length < 2) return '';
+    var d = 'M' + pts[0].x + ' ' + pts[0].y;
+    for(var i=0;i<pts.length-1;i++){
+      var p0 = pts[i-1] || pts[i];
+      var p1 = pts[i];
+      var p2 = pts[i+1];
+      var p3 = pts[i+2] || p2;
+      var c1x = p1.x + (p2.x - p0.x) / 6;
+      var c1y = p1.y + (p2.y - p0.y) / 6;
+      var c2x = p2.x - (p3.x - p1.x) / 6;
+      var c2y = p2.y - (p3.y - p1.y) / 6;
+      d += ' C' + c1x.toFixed(1) + ' ' + c1y.toFixed(1) + ' ' + c2x.toFixed(1) + ' ' + c2y.toFixed(1) + ' ' + p2.x + ' ' + p2.y;
+    }
+    return d;
+  }
+
+  function buildThread(){
+    if(!threadSvg || window.innerWidth < 1300 || !anchorEls.length) return;
+    var wrapEl = document.querySelector('.hero .wrap') || heroWrap;
+    var wrapLeft = wrapEl.getBoundingClientRect().left;
+    var left = wrapLeft - 98;
+    if(left < 14) { threadSvg.style.display = 'none'; return; }
+    threadSvg.style.display = '';
+    threadSvg.style.left = left + 'px';
+
+    var docH = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    threadSvg.setAttribute('width', 84);
+    threadSvg.setAttribute('height', docH);
+    threadSvg.setAttribute('viewBox', '0 0 84 ' + docH);
+    threadSvg.style.height = docH + 'px';
+    threadSvg.innerHTML = '';
+
+    var xs = [52, 26, 60, 30, 56, 24, 50, 32, 58];
+    points = [];
+    var heroRect = heroWrap.getBoundingClientRect();
+    var startY = heroRect.bottom + window.scrollY - 40;
+    points.push({x:54, y:Math.max(startY, 200)});
+    anchorEls.forEach(function(el, i){
+      var r = el.getBoundingClientRect();
+      var y = r.top + window.scrollY + 70;
+      points.push({x:xs[i % xs.length], y:y});
+    });
+    var last = points[points.length-1];
+    points.push({x:36, y:last.y + 260});
+
+    threadPath = document.createElementNS(svgNS, 'path');
+    threadPath.setAttribute('class','tpath');
+    threadPath.setAttribute('d', smoothPath(points));
+    threadSvg.appendChild(threadPath);
+
+    threadLen = threadPath.getTotalLength();
+    beads = [];
+    points.slice(1, -1).forEach(function(p){
+      var c = document.createElementNS(svgNS, 'circle');
+      c.setAttribute('class','tbead');
+      c.setAttribute('cx', p.x);
+      c.setAttribute('cy', p.y);
+      c.setAttribute('r', 4.2);
+      threadSvg.appendChild(c);
+      beads.push({el:c, y:p.y});
+    });
+
+    drawThread();
+  }
+
+  function drawThread(){
+    if(!threadPath) return;
+    var yNow = window.scrollY + window.innerHeight * 0.78;
+    var y0 = points[0].y, y1 = points[points.length-1].y;
+    var f = (yNow - y0) / (y1 - y0);
+    f = Math.max(0, Math.min(1, f));
+    if(reduceMotion) f = 1;
+    threadPath.style.strokeDasharray = threadLen;
+    threadPath.style.strokeDashoffset = threadLen * (1 - f);
+    beads.forEach(function(b){
+      b.el.classList.toggle('lit', b.y < yNow || reduceMotion);
+    });
+  }
+
+  var ticking = false;
+  function onThreadScroll(){
+    if(!ticking){
+      requestAnimationFrame(function(){
+        drawThread();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onThreadScroll, {passive:true});
+
+  var rbTimer = null;
+  window.addEventListener('resize', function(){
+    clearTimeout(rbTimer);
+    rbTimer = setTimeout(function(){
+      buildThread();
+      onScrollChrome();
+    }, 220);
+  });
+
+  function initThread(){
+    buildThread();
+    if(document.fonts && document.fonts.ready){
+      document.fonts.ready.then(function(){ setTimeout(buildThread, 80); });
+    }
+  }
+  if(document.readyState === 'complete'){ initThread(); }
+  else { window.addEventListener('load', initThread); }
+})();
+</script>
+
+
+</body></html>
